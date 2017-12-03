@@ -25,6 +25,7 @@
     [self.window makeKeyAndVisible];
     
 //    [[LSMessageView appearance] setTitleFont:[UIFont boldSystemFontOfSize:11]];
+    [[LSMessageView appearance] setSuccessBackgroundColor:[UIColor blueColor]];
     return YES;
 }
 

@@ -99,7 +99,7 @@ static NSDictionary *defaultAppearceDictionary = nil;
         // set model
         _subtitle = [subtitle copy];
         _type = type;
-        _paddingTop = 11;
+        _paddingTop = 15;
         
         self.backgroundColor = [UIColor clearColor];
 //        self.autoresizingMask = (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight);
@@ -108,10 +108,9 @@ static NSDictionary *defaultAppearceDictionary = nil;
         // background
         self.blurBackgroundImageView.autoresizingMask = (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight);
         self.blurBackgroundImageView.backgroundColor = [self defaultBackgroudColor];
-        self.blurBackgroundImageView.alpha = 0.75;
+        self.blurBackgroundImageView.alpha = 0.95;
         self.blurBackgroundImageView.frame = self.bounds;
         [self addSubview:self.blurBackgroundImageView];
-//        self.backgroundColor = [self defaultBackgroudColor];
         
         // set view
         // titleLabel
@@ -148,12 +147,12 @@ static NSDictionary *defaultAppearceDictionary = nil;
 }
 
 - (void)setPaddingTop:(CGFloat)paddingTop {
-    _paddingTop = _paddingTop?paddingTop:11;
+    _paddingTop = _paddingTop?paddingTop:15;
     [self setNeedsLayout];
 }
 - (void)configLayout {
 //    CGFloat paddingTop = self.paddingTop;//35;
-    CGFloat paddingBottom = 11;//30;
+    CGFloat paddingBottom = self.paddingTop;//30;
     CGFloat paddingLeft = 20;//40;
     CGFloat titleSpace = 5;//10;
     
@@ -321,48 +320,127 @@ static NSDictionary *defaultAppearceDictionary = nil;
     [self.titleLabel setFont:title_font];
 }
 
-- (void)setTitleColor:(UIColor *)titleColor {
-    _titleColor = titleColor;
-    [self.titleLabel setTextColor:titleColor];
-}
-
 - (void)setSubtitleFont:(UIFont *)subtitle_font {
     _subtitleFont = subtitle_font;
     [self.subtitleLabel setFont:subtitle_font];
 }
 
-- (void)setSubtitleColor:(UIColor *)subtitleColor {
-    _subtitleColor = subtitleColor;
-    [self.subtitleLabel setTextColor:subtitleColor];
+
+- (void)setTitleSuccessColor:(UIColor *)titleColor {
+    _titleSuccessColor = titleColor;
+     if (self.type == LSMessageType_Success) {
+         [self.titleLabel setTextColor:titleColor];
+     }
+}
+- (void)setTitleFaileColor:(UIColor *)titleColor {
+    _titleFailedColor = titleColor;
+    if (self.type == LSMessageType_Failed) {
+        [self.titleLabel setTextColor:titleColor];
+    }
+}
+
+- (void)setTitleErrorColor:(UIColor *)titleColor {
+    _titleErrorColor = titleColor;
+    if (self.type == LSMessageType_Error) {
+        [self.titleLabel setTextColor:titleColor];
+    }
+}
+
+- (void)setTitleMessageColor:(UIColor *)titleColor {
+    _titleMessageColor = titleColor;
+    if (self.type == LSMessageType_Message) {
+        [self.titleLabel setTextColor:titleColor];
+    }
+}
+
+- (void)setSubtitleSuccessColor:(UIColor *)subtitleColor {
+    _subtitleSuccessColor = subtitleColor;
+     if (self.type == LSMessageType_Success) {
+         [self.subtitleLabel setTextColor:subtitleColor];
+     }
+}
+- (void)setSubtitleFailedColor:(UIColor *)subtitleColor {
+    _subtitleFailedColor = subtitleColor;
+    if (self.type == LSMessageType_Failed) {
+        [self.subtitleLabel setTextColor:subtitleColor];
+    }
+}
+- (void)setSubtitleErrorColor:(UIColor *)subtitleColor {
+    _subtitleErrorColor = subtitleColor;
+    if (self.type == LSMessageType_Error) {
+        [self.subtitleLabel setTextColor:subtitleColor];
+    }
+}
+- (void)setSubtitleMessageColor:(UIColor *)subtitleColor {
+    _subtitleMessageColor = subtitleColor;
+    if (self.type == LSMessageType_Message) {
+        [self.subtitleLabel setTextColor:subtitleColor];
+    }
 }
 
 - (void)setSuccessIcon:(UIImage *)successIcon {
     _successIcon = successIcon;
-    _image = successIcon?successIcon:[self defaultImage];
+    if (self.type == LSMessageType_Success) {
+    self.image = successIcon?successIcon:[self defaultImage];
+    }
 }
 
 - (void)setFailedIcon:(UIImage *)failedIcon {
     _failedIcon = failedIcon;
-    _image = failedIcon?failedIcon:[self defaultImage];
+    if (self.type == LSMessageType_Failed) {
+    self.image = failedIcon?failedIcon:[self defaultImage];
+    }
 }
 
 -(void)setErrorIcon:(UIImage *)errorIcon {
     _errorIcon = errorIcon;
-    _image = errorIcon?errorIcon:[self defaultImage];
+    if (self.type == LSMessageType_Error) {
+    self.image = errorIcon?errorIcon:[self defaultImage];
+    }
 }
 
 - (void)setMessageIcon:(UIImage *)messageIcon {
     _messageIcon = messageIcon;
-    _image = messageIcon?messageIcon:[self defaultImage];
+    if (self.type == LSMessageType_Message) {
+    self.image = messageIcon?messageIcon:[self defaultImage];
+    }
 }
 
 - (void)setCloseIcon:(UIImage *)closeIcon {
     _closeIcon = closeIcon;
     [self.closeImageView setImage:closeIcon];
 }
-- (void)setBackgroundColor:(UIColor *)backgroundColor {
-    _backgroundColor = backgroundColor;
-    self.blurBackgroundImageView.backgroundColor = backgroundColor?backgroundColor:[self defaultBackgroudColor];
+- (void)setBackgroundColorAlpha:(CGFloat)backgroundColorAlpha {
+    _backgroundColorAlpha = backgroundColorAlpha;
+    self.blurBackgroundImageView.alpha = backgroundColorAlpha;
+}
+
+- (void)setSuccessBackgroundColor:(UIColor *)successBackgroundColor {
+    _successBackgroundColor = successBackgroundColor;
+    if (self.type == LSMessageType_Success) {
+        self.blurBackgroundImageView.backgroundColor = successBackgroundColor?successBackgroundColor:[self defaultBackgroudColor];
+    }
+}
+
+- (void)setErrorBackgroundColor:(UIColor *)errorBackgroundColor {
+    _errorBackgroundColor = errorBackgroundColor;
+    if (self.type == LSMessageType_Error) {
+        self.blurBackgroundImageView.backgroundColor = errorBackgroundColor?errorBackgroundColor:[self defaultBackgroudColor];
+    }
+}
+
+- (void)setFailedBackgroundColor:(UIColor *)failedBackgroundColor {
+    _failedBackgroundColor = failedBackgroundColor;
+    if (self.type == LSMessageType_Failed) {
+        self.blurBackgroundImageView.backgroundColor = failedBackgroundColor?failedBackgroundColor:[self defaultBackgroudColor];
+    }
+}
+
+- (void)setMessageBackgroundColor:(UIColor *)messageBackgroundColor {
+    _messageBackgroundColor = messageBackgroundColor;
+    if (self.type == LSMessageType_Message) {
+        self.blurBackgroundImageView.backgroundColor = messageBackgroundColor?messageBackgroundColor:[self defaultBackgroudColor];
+    }
 }
 
 @end

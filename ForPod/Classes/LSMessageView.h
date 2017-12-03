@@ -25,17 +25,35 @@ typedef NS_ENUM(NSInteger,LSMessageViewEvent) {
 
 @property (nonatomic,assign)        CGFloat             paddingTop;
 
-// users can set appearce from code
+// ----------------------users can set appearance from code
 @property (nonatomic,strong) UIFont *  _Nullable titleFont UI_APPEARANCE_SELECTOR;
-@property (nonatomic,strong) UIColor * _Nullable titleColor UI_APPEARANCE_SELECTOR;
-@property (nonatomic,strong) UIFont * _Nullable subtitleFont UI_APPEARANCE_SELECTOR;
-@property (nonatomic,strong) UIColor * _Nullable subtitleColor  UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIFont *  _Nullable subtitleFont UI_APPEARANCE_SELECTOR;
+
+// title
+@property (nonatomic,strong) UIColor * _Nullable titleSuccessColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIColor * _Nullable titleFailedColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIColor * _Nullable titleErrorColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIColor * _Nullable titleMessageColor UI_APPEARANCE_SELECTOR;
+
+// subtitle
+@property (nonatomic,strong) UIColor * _Nullable subtitleSuccessColor  UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIColor * _Nullable subtitleFailedColor  UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIColor * _Nullable subtitleErrorColor  UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIColor * _Nullable subtitleMessageColor  UI_APPEARANCE_SELECTOR;
+
+// icon
 @property (nonatomic,strong) UIImage * _Nullable successIcon UI_APPEARANCE_SELECTOR;
 @property (nonatomic,strong) UIImage * _Nullable failedIcon UI_APPEARANCE_SELECTOR;
 @property (nonatomic,strong) UIImage * _Nullable errorIcon UI_APPEARANCE_SELECTOR;
 @property (nonatomic,strong) UIImage * _Nullable messageIcon UI_APPEARANCE_SELECTOR;
 @property (nonatomic,strong) UIImage * _Nullable closeIcon UI_APPEARANCE_SELECTOR;
-@property (nonatomic,strong) UIColor * _Nullable backgroundColor UI_APPEARANCE_SELECTOR;
+
+// background
+@property (nonatomic,assign) CGFloat   backgroundColorAlpha UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIColor * _Nullable successBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIColor * _Nullable failedBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIColor * _Nullable errorBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIColor * _Nullable messageBackgroundColor UI_APPEARANCE_SELECTOR;
 
 
 - (instancetype _Nonnull )initWithFrame:(CGRect)frame
