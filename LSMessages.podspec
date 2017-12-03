@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LSMessages"
-  s.version      = "1.0.0"
+  s.version      = "1.0.2"
   s.summary      = "Show Messages"
 
   # This description is used to generate tags and improve search results.
@@ -135,6 +135,6 @@ There are 4 different types already set up for you: Success, Error, Warning, Mes
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "HexColor", "~> 1.0.1"
+  s.dependency 'HexColors', '~> 2.3.0'
 
 end
