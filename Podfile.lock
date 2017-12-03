@@ -1,21 +1,12 @@
 PODS:
-  - HexColor (1.0.3)
+  - HexColors (2.3.0)
 
 DEPENDENCIES:
-  - HexColor (from `https://github.com/holgersindbaek/HexColor.git`)
-
-EXTERNAL SOURCES:
-  HexColor:
-    :git: https://github.com/holgersindbaek/HexColor.git
-
-CHECKOUT OPTIONS:
-  HexColor:
-    :commit: fcde6b3ed0f0d2521d7474b90f4fb6f4a1be0892
-    :git: https://github.com/holgersindbaek/HexColor.git
+  - HexColors (= 2.3.0)
 
 SPEC CHECKSUMS:
-  HexColor: afd3de099b6ef95b7b527095d87a796b706d685b
+  HexColors: 6ad3947c3447a055a3aa8efa859def096351fe5f
 
-PODFILE CHECKSUM: 9d52d18ca6ee317777fbed429d24963479627a7c
+PODFILE CHECKSUM: a32cee9a03ca3c86ab7241344726702f51e62ce3
 
 COCOAPODS: 1.2.1

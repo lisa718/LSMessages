@@ -7,57 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3CFD14D7AF7792764094A2A661E9DF02 /* HexColor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9D648E4EA5B5CEDB41E6026C5C659 /* HexColor-dummy.m */; };
-		3F8B986E1A0E3F980C41AA4D89718DB2 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 15197F601A68CB9EA53E5FBB88D18B2B /* HexColor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		50F7DEAECDC752DA486C1400C6B6EC99 /* HexColor.h in Headers */ = {isa = PBXBuildFile; fileRef = BA67A89D0802D3B20BC97D47F2EECAAF /* HexColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		85BEC8C20895B717ED9D36464F1BA6F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		90A338BB3D16042BBAF679C7EE2D2694 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		DFC88CA7E2095A0999B38DD8B00BE1BD /* Pods-LSMessages-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CBF6F4ECA6BB69019ECD7ABDCD2715 /* Pods-LSMessages-dummy.m */; };
+		14DD78062E33839871A3CFA30EAEF0F8 /* HexColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C14560A3FBF4F3510139C792964A87 /* HexColors-dummy.m */; };
+		5C15E9FEE3A7C5D621CCE7DB55B0DA53 /* HexColors.h in Headers */ = {isa = PBXBuildFile; fileRef = F7EA367A35BCA242B3F3CA7582F600C8 /* HexColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		684887DE0B0891FB0EA0B6F6B53622B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		6AABE052F8D3F37AC73155594DD34B3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A4950E142AD29C6F3F5E021256208496 /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C310A47DD4F0E6BD03DB9EBD17787EAE /* HexColors.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E9AC5047FDE9AAF6D6AC1E72904DB441 /* Pods-LSMessages-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CBF6F4ECA6BB69019ECD7ABDCD2715 /* Pods-LSMessages-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D7BD4130EE3BA79AB138B1602C65FBBC /* PBXContainerItemProxy */ = {
+		AE428C66CF4550B64C5500D1DE8ABA70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 836ECA85A29AB90A535F6586717084D0;
-			remoteInfo = HexColor;
+			remoteGlobalIDString = EC7BAA2B0109B633CE06A36E872A9505;
+			remoteInfo = HexColors;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A604DBDA30F07EF51A9A8F6061CAED2 /* libPods-LSMessages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-LSMessages.a"; path = "libPods-LSMessages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D6BA3D3F3326602FD3A27D0B160BD19 /* HexColor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HexColor-prefix.pch"; sourceTree = "<group>"; };
-		15197F601A68CB9EA53E5FBB88D18B2B /* HexColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HexColor.m; sourceTree = "<group>"; };
+		0716B3CD81DC5C4FBA72F1EECCEFBBDE /* HexColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HexColors-prefix.pch"; sourceTree = "<group>"; };
+		0E6C05F73D6EEE81290CB50056C0FFBF /* HexColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HexColors.xcconfig; sourceTree = "<group>"; };
 		29CF4979A7C723DBB1C441EBAFBFCB43 /* Pods-LSMessages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LSMessages.release.xcconfig"; sourceTree = "<group>"; };
+		33E4386D421E1C2AC583EF5A1A94AD1C /* libPods-LSMessages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-LSMessages.a"; path = "libPods-LSMessages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8D3D275F70832057CE3C19F5728E74 /* Pods-LSMessages-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LSMessages-acknowledgements.markdown"; sourceTree = "<group>"; };
 		48B6837BBE8C81B75C5A09A1C096CE80 /* Pods-LSMessages-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LSMessages-acknowledgements.plist"; sourceTree = "<group>"; };
-		4FF9D648E4EA5B5CEDB41E6026C5C659 /* HexColor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HexColor-dummy.m"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7ED9508297A7464D97A14FA164A5CCE7 /* libHexColor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHexColor.a; path = libHexColor.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8417CD3F4A12408330FCB9A2FCFF5FAA /* libHexColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHexColors.a; path = libHexColors.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB75D8C8F54D156DC24CFE725063377 /* Pods-LSMessages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LSMessages.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		989E25197A9BCA8693991A94A8F86D2D /* Pods-LSMessages-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LSMessages-frameworks.sh"; sourceTree = "<group>"; };
 		A4CBF6F4ECA6BB69019ECD7ABDCD2715 /* Pods-LSMessages-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LSMessages-dummy.m"; sourceTree = "<group>"; };
-		BA67A89D0802D3B20BC97D47F2EECAAF /* HexColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
 		BACACF74BDCB581A918CB9410A267501 /* Pods-LSMessages-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LSMessages-resources.sh"; sourceTree = "<group>"; };
-		C1F7EA2FDE14B6F67F00C69CFE5DE45A /* HexColor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HexColor.xcconfig; sourceTree = "<group>"; };
+		C310A47DD4F0E6BD03DB9EBD17787EAE /* HexColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HexColors.m; path = Classes/HexColors.m; sourceTree = "<group>"; };
+		D7C14560A3FBF4F3510139C792964A87 /* HexColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HexColors-dummy.m"; sourceTree = "<group>"; };
+		F7EA367A35BCA242B3F3CA7582F600C8 /* HexColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HexColors.h; path = Classes/HexColors.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5069DD18725915F8F1F1E57EE576D508 /* Frameworks */ = {
+		26A6C056EEF2774B4DA37255B4BCE72F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85BEC8C20895B717ED9D36464F1BA6F5 /* Foundation.framework in Frameworks */,
+				6AABE052F8D3F37AC73155594DD34B3D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D385761CE417D4126C17609A492D4FBA /* Frameworks */ = {
+		2F45FD804D336CC90E6F5B7EB2369D0E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90A338BB3D16042BBAF679C7EE2D2694 /* Foundation.framework in Frameworks */,
+				684887DE0B0891FB0EA0B6F6B53622B2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,32 +72,35 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		04F68C04940C5D437F301BD92E53D438 /* Products */ = {
+		092F74BE93C9BA17842598878517398C /* HexColors */ = {
 			isa = PBXGroup;
 			children = (
-				7ED9508297A7464D97A14FA164A5CCE7 /* libHexColor.a */,
-				0A604DBDA30F07EF51A9A8F6061CAED2 /* libPods-LSMessages.a */,
+				F7EA367A35BCA242B3F3CA7582F600C8 /* HexColors.h */,
+				C310A47DD4F0E6BD03DB9EBD17787EAE /* HexColors.m */,
+				6FFD5BA98B7BB941D76BA6E623C8822B /* Support Files */,
+			);
+			name = HexColors;
+			path = HexColors;
+			sourceTree = "<group>";
+		};
+		6DAC4A83F40E733D1F62778678912E35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8417CD3F4A12408330FCB9A2FCFF5FAA /* libHexColors.a */,
+				33E4386D421E1C2AC583EF5A1A94AD1C /* libPods-LSMessages.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0E02EFED5CF3B6F5E3E5B2D1DE0A9A61 /* HexColor */ = {
+		6FFD5BA98B7BB941D76BA6E623C8822B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BA67A89D0802D3B20BC97D47F2EECAAF /* HexColor.h */,
-				15197F601A68CB9EA53E5FBB88D18B2B /* HexColor.m */,
-				C3256A231713B54D2A372A4F004E771E /* Support Files */,
+				0E6C05F73D6EEE81290CB50056C0FFBF /* HexColors.xcconfig */,
+				D7C14560A3FBF4F3510139C792964A87 /* HexColors-dummy.m */,
+				0716B3CD81DC5C4FBA72F1EECCEFBBDE /* HexColors-prefix.pch */,
 			);
-			name = HexColor;
-			path = HexColor;
-			sourceTree = "<group>";
-		};
-		143BC9CB5A2FA5AA8002C82C79CA85FD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0E02EFED5CF3B6F5E3E5B2D1DE0A9A61 /* HexColor */,
-			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/HexColors";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -105,8 +108,8 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				143BC9CB5A2FA5AA8002C82C79CA85FD /* Pods */,
-				04F68C04940C5D437F301BD92E53D438 /* Products */,
+				F9A417A795CBB0D3515C1BAEC1225A8D /* Pods */,
+				6DAC4A83F40E733D1F62778678912E35 /* Products */,
 				047B3E17DC1DB56A7FC5B70065574A5A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -117,17 +120,6 @@
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C3256A231713B54D2A372A4F004E771E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C1F7EA2FDE14B6F67F00C69CFE5DE45A /* HexColor.xcconfig */,
-				4FF9D648E4EA5B5CEDB41E6026C5C659 /* HexColor-dummy.m */,
-				0D6BA3D3F3326602FD3A27D0B160BD19 /* HexColor-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/HexColor";
 			sourceTree = "<group>";
 		};
 		C48B14D087F2F6A46518941CBE2CD409 /* Pods-LSMessages */ = {
@@ -153,52 +145,60 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		F9A417A795CBB0D3515C1BAEC1225A8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				092F74BE93C9BA17842598878517398C /* HexColors */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3155A88ECF1D4B4D0983FC56E938E55B /* Headers */ = {
+		B614DA345A86993AB81695ABCAC62CE3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50F7DEAECDC752DA486C1400C6B6EC99 /* HexColor.h in Headers */,
+				5C15E9FEE3A7C5D621CCE7DB55B0DA53 /* HexColors.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		836ECA85A29AB90A535F6586717084D0 /* HexColor */ = {
+		6450B45CFEFB5C0BAF544BC4DB84EABB /* Pods-LSMessages */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3804608B4DED9A5D26EFB3995E41CF17 /* Build configuration list for PBXNativeTarget "HexColor" */;
+			buildConfigurationList = 2AD96B2DAED4C9E41A173540E287A043 /* Build configuration list for PBXNativeTarget "Pods-LSMessages" */;
 			buildPhases = (
-				B01C48609597E122735E4BE4E89B3F97 /* Sources */,
-				D385761CE417D4126C17609A492D4FBA /* Frameworks */,
-				3155A88ECF1D4B4D0983FC56E938E55B /* Headers */,
+				3F802055D73576CDF7776C0E696BE6D4 /* Sources */,
+				26A6C056EEF2774B4DA37255B4BCE72F /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = HexColor;
-			productName = HexColor;
-			productReference = 7ED9508297A7464D97A14FA164A5CCE7 /* libHexColor.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		95D990A6980344651D28DB914D8660EE /* Pods-LSMessages */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 18493324707F6E1D8D6460FD8386647E /* Build configuration list for PBXNativeTarget "Pods-LSMessages" */;
-			buildPhases = (
-				9AC80B947D1E79AF7FD9FB315A4BAC33 /* Sources */,
-				5069DD18725915F8F1F1E57EE576D508 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				53FFABE321FFAC427F177EFF70E8FDAB /* PBXTargetDependency */,
+				EFC60C055E6616EC0661B322ED0B9A04 /* PBXTargetDependency */,
 			);
 			name = "Pods-LSMessages";
 			productName = "Pods-LSMessages";
-			productReference = 0A604DBDA30F07EF51A9A8F6061CAED2 /* libPods-LSMessages.a */;
+			productReference = 33E4386D421E1C2AC583EF5A1A94AD1C /* libPods-LSMessages.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EC7BAA2B0109B633CE06A36E872A9505 /* HexColors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC7728CE8385DA0D792A4B410991DA2C /* Build configuration list for PBXNativeTarget "HexColors" */;
+			buildPhases = (
+				E8EFD4C0C40128513B4BF22F928B8067 /* Sources */,
+				2F45FD804D336CC90E6F5B7EB2369D0E /* Frameworks */,
+				B614DA345A86993AB81695ABCAC62CE3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HexColors;
+			productName = HexColors;
+			productReference = 8417CD3F4A12408330FCB9A2FCFF5FAA /* libHexColors.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -218,68 +218,68 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 04F68C04940C5D437F301BD92E53D438 /* Products */;
+			productRefGroup = 6DAC4A83F40E733D1F62778678912E35 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				836ECA85A29AB90A535F6586717084D0 /* HexColor */,
-				95D990A6980344651D28DB914D8660EE /* Pods-LSMessages */,
+				EC7BAA2B0109B633CE06A36E872A9505 /* HexColors */,
+				6450B45CFEFB5C0BAF544BC4DB84EABB /* Pods-LSMessages */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9AC80B947D1E79AF7FD9FB315A4BAC33 /* Sources */ = {
+		3F802055D73576CDF7776C0E696BE6D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFC88CA7E2095A0999B38DD8B00BE1BD /* Pods-LSMessages-dummy.m in Sources */,
+				E9AC5047FDE9AAF6D6AC1E72904DB441 /* Pods-LSMessages-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B01C48609597E122735E4BE4E89B3F97 /* Sources */ = {
+		E8EFD4C0C40128513B4BF22F928B8067 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CFD14D7AF7792764094A2A661E9DF02 /* HexColor-dummy.m in Sources */,
-				3F8B986E1A0E3F980C41AA4D89718DB2 /* HexColor.m in Sources */,
+				14DD78062E33839871A3CFA30EAEF0F8 /* HexColors-dummy.m in Sources */,
+				A4950E142AD29C6F3F5E021256208496 /* HexColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		53FFABE321FFAC427F177EFF70E8FDAB /* PBXTargetDependency */ = {
+		EFC60C055E6616EC0661B322ED0B9A04 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = HexColor;
-			target = 836ECA85A29AB90A535F6586717084D0 /* HexColor */;
-			targetProxy = D7BD4130EE3BA79AB138B1602C65FBBC /* PBXContainerItemProxy */;
+			name = HexColors;
+			target = EC7BAA2B0109B633CE06A36E872A9505 /* HexColors */;
+			targetProxy = AE428C66CF4550B64C5500D1DE8ABA70 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0BC11BD9871CAB9FF3EBED9070960A03 /* Debug */ = {
+		283992143C2305EE38394694C2691309 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FB75D8C8F54D156DC24CFE725063377 /* Pods-LSMessages.debug.xcconfig */;
+			baseConfigurationReference = 0E6C05F73D6EEE81290CB50056C0FFBF /* HexColors.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HexColors/HexColors-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 		34FE9531DA9AF2820790339988D5FF41 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -325,19 +325,19 @@
 			};
 			name = Release;
 		};
-		45A46E36F340AF522D6F9C29BB37F4B6 /* Release */ = {
+		406FEEAF8D4E1209541807A452C0213D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29CF4979A7C723DBB1C441EBAFBFCB43 /* Pods-LSMessages.release.xcconfig */;
+			baseConfigurationReference = 8FB75D8C8F54D156DC24CFE725063377 /* Pods-LSMessages.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -346,11 +346,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		769178A7D1B2C3974C7BA3C75F04AD37 /* Debug */ = {
+		6EDE42538BBBFE1A4A31F5D9611DADB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1F7EA2FDE14B6F67F00C69CFE5DE45A /* HexColor.xcconfig */;
+			baseConfigurationReference = 0E6C05F73D6EEE81290CB50056C0FFBF /* HexColors.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -358,7 +358,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/HexColor/HexColor-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/HexColors/HexColors-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -419,9 +419,9 @@
 			};
 			name = Debug;
 		};
-		EEA52BC411D0B8029832579EB1E52216 /* Release */ = {
+		CAB06E54356D8224D6E38EC01A7E2B92 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1F7EA2FDE14B6F67F00C69CFE5DE45A /* HexColor.xcconfig */;
+			baseConfigurationReference = 29CF4979A7C723DBB1C441EBAFBFCB43 /* Pods-LSMessages.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -429,14 +429,14 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/HexColor/HexColor-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -445,11 +445,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18493324707F6E1D8D6460FD8386647E /* Build configuration list for PBXNativeTarget "Pods-LSMessages" */ = {
+		2AD96B2DAED4C9E41A173540E287A043 /* Build configuration list for PBXNativeTarget "Pods-LSMessages" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0BC11BD9871CAB9FF3EBED9070960A03 /* Debug */,
-				45A46E36F340AF522D6F9C29BB37F4B6 /* Release */,
+				406FEEAF8D4E1209541807A452C0213D /* Debug */,
+				CAB06E54356D8224D6E38EC01A7E2B92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -463,11 +463,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3804608B4DED9A5D26EFB3995E41CF17 /* Build configuration list for PBXNativeTarget "HexColor" */ = {
+		EC7728CE8385DA0D792A4B410991DA2C /* Build configuration list for PBXNativeTarget "HexColors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				769178A7D1B2C3974C7BA3C75F04AD37 /* Debug */,
-				EEA52BC411D0B8029832579EB1E52216 /* Release */,
+				6EDE42538BBBFE1A4A31F5D9611DADB8 /* Debug */,
+				283992143C2305EE38394694C2691309 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,7 +8,7 @@
 
 #import "LSMessageView.h"
 #import "LSMessage.h"
-#import "HexColor.h"
+#import "HexColors.h"
 
 //#warning iPhone X and status bar not right
 
