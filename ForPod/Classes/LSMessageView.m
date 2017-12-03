@@ -54,7 +54,7 @@ static NSDictionary *defaultAppearceDictionary = nil;
                                               @"titleFontSize":@15,
                                               @"subtitleFontSize":@14,
                                               @"textColor":@"#FFFFFF",
-                                              @"imageName":@"mockmessage_prompting_succeed",
+                                              @"imageName":@"lsmessage_prompting_succeed",
                                               @"backgroundColor":@"#8FE092",
                                               @"titleDefault":@"请求成功"
                                               },
@@ -62,7 +62,7 @@ static NSDictionary *defaultAppearceDictionary = nil;
                                               @"titleFontSize":@15,
                                               @"subtitleFontSize":@14,
                                               @"textColor":@"#FFFFFF",
-                                              @"imageName":@"mockmessage_prompting_fail",
+                                              @"imageName":@"lsmessage_prompting_fail",
                                               @"backgroundColor":@"#FF6F6F",
                                               @"titleDefault":@"请求失败"
                                               },
@@ -70,7 +70,7 @@ static NSDictionary *defaultAppearceDictionary = nil;
                                               @"titleFontSize":@15,
                                               @"subtitleFontSize":@14,
                                               @"textColor":@"#FFFFFF",
-                                              @"imageName":@"mockmessage_prompting_error",
+                                              @"imageName":@"lsmessage_prompting_error",
                                               @"backgroundColor":@"#FFC666",
                                               @"titleDefault":@"操作错误"
                                               },
@@ -78,7 +78,7 @@ static NSDictionary *defaultAppearceDictionary = nil;
                                               @"titleFontSize":@15,
                                               @"subtitleFontSize":@14,
                                               @"textColor":@"#333333",
-                                              @"imageName":@"mockmessage_prompting_message",
+                                              @"imageName":@"lsmessage_prompting_message",
                                               @"backgroundColor":@"#E5E5E5",
                                               @"titleDefault":@"提示信息"
                                               }
@@ -359,6 +359,10 @@ static NSDictionary *defaultAppearceDictionary = nil;
 - (void)setCloseIcon:(UIImage *)closeIcon {
     _closeIcon = closeIcon;
     [self.closeImageView setImage:closeIcon];
+}
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
+    _backgroundColor = backgroundColor;
+    self.blurBackgroundImageView.backgroundColor = backgroundColor?backgroundColor:[self defaultBackgroudColor];
 }
 
 @end

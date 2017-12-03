@@ -14,10 +14,25 @@
 		E1483BA51FD3BD790030CA29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1483BA41FD3BD790030CA29 /* main.m */; };
 		E1483BAF1FD3BD790030CA29 /* LSMessagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1483BAE1FD3BD790030CA29 /* LSMessagesTests.m */; };
 		E1483BBA1FD3BD790030CA29 /* LSMessagesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1483BB91FD3BD790030CA29 /* LSMessagesUITests.m */; };
-		E1483BCE1FD3BE6A0030CA29 /* LSMessageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E1483BC81FD3BE6A0030CA29 /* LSMessageOperation.m */; };
-		E1483BCF1FD3BE6A0030CA29 /* LSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E1483BC91FD3BE6A0030CA29 /* LSMessage.m */; };
-		E1483BD01FD3BE6B0030CA29 /* LSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1483BCB1FD3BE6A0030CA29 /* LSMessageView.m */; };
 		E1483BD11FD3BE6B0030CA29 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483BCD1FD3BE6A0030CA29 /* 1.png */; };
+		E1483BF41FD3D8F80030CA29 /* LSMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1483BEE1FD3D8F70030CA29 /* LSMessageView.m */; };
+		E1483BF51FD3D8F80030CA29 /* LSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E1483BEF1FD3D8F70030CA29 /* LSMessage.m */; };
+		E1483BF61FD3D8F80030CA29 /* LSMessageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E1483BF21FD3D8F70030CA29 /* LSMessageOperation.m */; };
+		E1483C271FD3D9D10030CA29 /* lsmessage_prompting_succeed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C181FD3D9D00030CA29 /* lsmessage_prompting_succeed@2x.png */; };
+		E1483C281FD3D9D10030CA29 /* lsmessage_prompting_fail@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C191FD3D9D00030CA29 /* lsmessage_prompting_fail@3x.png */; };
+		E1483C291FD3D9D10030CA29 /* lsmessage_prompting_succeed.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C1A1FD3D9D00030CA29 /* lsmessage_prompting_succeed.png */; };
+		E1483C2A1FD3D9D10030CA29 /* lsmessage_prompting_fail.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C1B1FD3D9D00030CA29 /* lsmessage_prompting_fail.png */; };
+		E1483C2B1FD3D9D10030CA29 /* lsmessage_prompting_succeed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C1C1FD3D9D00030CA29 /* lsmessage_prompting_succeed@3x.png */; };
+		E1483C2C1FD3D9D10030CA29 /* lsmessage_prompting_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C1D1FD3D9D00030CA29 /* lsmessage_prompting_error@2x.png */; };
+		E1483C2D1FD3D9D10030CA29 /* lsmessage_prompting_error.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C1E1FD3D9D00030CA29 /* lsmessage_prompting_error.png */; };
+		E1483C2E1FD3D9D10030CA29 /* lsmessage_prompting_message.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C1F1FD3D9D00030CA29 /* lsmessage_prompting_message.png */; };
+		E1483C2F1FD3D9D10030CA29 /* lsmessage_prompting_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C201FD3D9D00030CA29 /* lsmessage_prompting_close@3x.png */; };
+		E1483C301FD3D9D10030CA29 /* lsmessage_prompting_close.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C211FD3D9D00030CA29 /* lsmessage_prompting_close.png */; };
+		E1483C311FD3D9D10030CA29 /* lsmessage_prompting_message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C221FD3D9D00030CA29 /* lsmessage_prompting_message@3x.png */; };
+		E1483C321FD3D9D10030CA29 /* lsmessage_prompting_fail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C231FD3D9D00030CA29 /* lsmessage_prompting_fail@2x.png */; };
+		E1483C331FD3D9D10030CA29 /* lsmessage_prompting_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C241FD3D9D00030CA29 /* lsmessage_prompting_message@2x.png */; };
+		E1483C341FD3D9D10030CA29 /* lsmessage_prompting_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C251FD3D9D00030CA29 /* lsmessage_prompting_close@2x.png */; };
+		E1483C351FD3D9D10030CA29 /* lsmessage_prompting_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C261FD3D9D10030CA29 /* lsmessage_prompting_error@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,13 +70,28 @@
 		E1483BB51FD3BD790030CA29 /* LSMessagesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSMessagesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1483BB91FD3BD790030CA29 /* LSMessagesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSMessagesUITests.m; sourceTree = "<group>"; };
 		E1483BBB1FD3BD790030CA29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1483BC71FD3BE6A0030CA29 /* LSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMessage.h; sourceTree = "<group>"; };
-		E1483BC81FD3BE6A0030CA29 /* LSMessageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMessageOperation.m; sourceTree = "<group>"; };
-		E1483BC91FD3BE6A0030CA29 /* LSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMessage.m; sourceTree = "<group>"; };
-		E1483BCA1FD3BE6A0030CA29 /* LSMessageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMessageOperation.h; sourceTree = "<group>"; };
-		E1483BCB1FD3BE6A0030CA29 /* LSMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSMessageView.m; sourceTree = "<group>"; };
-		E1483BCC1FD3BE6A0030CA29 /* LSMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSMessageView.h; sourceTree = "<group>"; };
 		E1483BCD1FD3BE6A0030CA29 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		E1483BEE1FD3D8F70030CA29 /* LSMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSMessageView.m; path = ForPod/Classes/LSMessageView.m; sourceTree = SOURCE_ROOT; };
+		E1483BEF1FD3D8F70030CA29 /* LSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSMessage.m; path = ForPod/Classes/LSMessage.m; sourceTree = SOURCE_ROOT; };
+		E1483BF01FD3D8F70030CA29 /* LSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSMessage.h; path = ForPod/Classes/LSMessage.h; sourceTree = SOURCE_ROOT; };
+		E1483BF11FD3D8F70030CA29 /* LSMessageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSMessageOperation.h; path = ForPod/Classes/LSMessageOperation.h; sourceTree = SOURCE_ROOT; };
+		E1483BF21FD3D8F70030CA29 /* LSMessageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSMessageOperation.m; path = ForPod/Classes/LSMessageOperation.m; sourceTree = SOURCE_ROOT; };
+		E1483BF31FD3D8F80030CA29 /* LSMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSMessageView.h; path = ForPod/Classes/LSMessageView.h; sourceTree = SOURCE_ROOT; };
+		E1483C181FD3D9D00030CA29 /* lsmessage_prompting_succeed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_succeed@2x.png"; path = "ForPod/Assets/lsmessage_prompting_succeed@2x.png"; sourceTree = SOURCE_ROOT; };
+		E1483C191FD3D9D00030CA29 /* lsmessage_prompting_fail@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_fail@3x.png"; path = "ForPod/Assets/lsmessage_prompting_fail@3x.png"; sourceTree = SOURCE_ROOT; };
+		E1483C1A1FD3D9D00030CA29 /* lsmessage_prompting_succeed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lsmessage_prompting_succeed.png; path = ForPod/Assets/lsmessage_prompting_succeed.png; sourceTree = SOURCE_ROOT; };
+		E1483C1B1FD3D9D00030CA29 /* lsmessage_prompting_fail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lsmessage_prompting_fail.png; path = ForPod/Assets/lsmessage_prompting_fail.png; sourceTree = SOURCE_ROOT; };
+		E1483C1C1FD3D9D00030CA29 /* lsmessage_prompting_succeed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_succeed@3x.png"; path = "ForPod/Assets/lsmessage_prompting_succeed@3x.png"; sourceTree = SOURCE_ROOT; };
+		E1483C1D1FD3D9D00030CA29 /* lsmessage_prompting_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_error@2x.png"; path = "ForPod/Assets/lsmessage_prompting_error@2x.png"; sourceTree = SOURCE_ROOT; };
+		E1483C1E1FD3D9D00030CA29 /* lsmessage_prompting_error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lsmessage_prompting_error.png; path = ForPod/Assets/lsmessage_prompting_error.png; sourceTree = SOURCE_ROOT; };
+		E1483C1F1FD3D9D00030CA29 /* lsmessage_prompting_message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lsmessage_prompting_message.png; path = ForPod/Assets/lsmessage_prompting_message.png; sourceTree = SOURCE_ROOT; };
+		E1483C201FD3D9D00030CA29 /* lsmessage_prompting_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_close@3x.png"; path = "ForPod/Assets/lsmessage_prompting_close@3x.png"; sourceTree = SOURCE_ROOT; };
+		E1483C211FD3D9D00030CA29 /* lsmessage_prompting_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lsmessage_prompting_close.png; path = ForPod/Assets/lsmessage_prompting_close.png; sourceTree = SOURCE_ROOT; };
+		E1483C221FD3D9D00030CA29 /* lsmessage_prompting_message@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_message@3x.png"; path = "ForPod/Assets/lsmessage_prompting_message@3x.png"; sourceTree = SOURCE_ROOT; };
+		E1483C231FD3D9D00030CA29 /* lsmessage_prompting_fail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_fail@2x.png"; path = "ForPod/Assets/lsmessage_prompting_fail@2x.png"; sourceTree = SOURCE_ROOT; };
+		E1483C241FD3D9D00030CA29 /* lsmessage_prompting_message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_message@2x.png"; path = "ForPod/Assets/lsmessage_prompting_message@2x.png"; sourceTree = SOURCE_ROOT; };
+		E1483C251FD3D9D00030CA29 /* lsmessage_prompting_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_close@2x.png"; path = "ForPod/Assets/lsmessage_prompting_close@2x.png"; sourceTree = SOURCE_ROOT; };
+		E1483C261FD3D9D10030CA29 /* lsmessage_prompting_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_error@3x.png"; path = "ForPod/Assets/lsmessage_prompting_error@3x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,17 +162,18 @@
 		E1483B941FD3BD790030CA29 /* LSMessages */ = {
 			isa = PBXGroup;
 			children = (
+				E1483BF01FD3D8F70030CA29 /* LSMessage.h */,
+				E1483BEF1FD3D8F70030CA29 /* LSMessage.m */,
+				E1483C171FD3D9B60030CA29 /* Assets */,
+				E1483BF11FD3D8F70030CA29 /* LSMessageOperation.h */,
+				E1483BF21FD3D8F70030CA29 /* LSMessageOperation.m */,
+				E1483BF31FD3D8F80030CA29 /* LSMessageView.h */,
+				E1483BEE1FD3D8F70030CA29 /* LSMessageView.m */,
 				E1483B951FD3BD790030CA29 /* AppDelegate.h */,
 				E1483B961FD3BD790030CA29 /* AppDelegate.m */,
 				E1483B981FD3BD790030CA29 /* ViewController.h */,
 				E1483B991FD3BD790030CA29 /* ViewController.m */,
 				E1483BCD1FD3BE6A0030CA29 /* 1.png */,
-				E1483BC71FD3BE6A0030CA29 /* LSMessage.h */,
-				E1483BC91FD3BE6A0030CA29 /* LSMessage.m */,
-				E1483BCA1FD3BE6A0030CA29 /* LSMessageOperation.h */,
-				E1483BC81FD3BE6A0030CA29 /* LSMessageOperation.m */,
-				E1483BCC1FD3BE6A0030CA29 /* LSMessageView.h */,
-				E1483BCB1FD3BE6A0030CA29 /* LSMessageView.m */,
 				E1483B9E1FD3BD790030CA29 /* Assets.xcassets */,
 				E1483BA31FD3BD790030CA29 /* Info.plist */,
 				E1483BA41FD3BD790030CA29 /* main.m */,
@@ -166,6 +197,28 @@
 				E1483BBB1FD3BD790030CA29 /* Info.plist */,
 			);
 			path = LSMessagesUITests;
+			sourceTree = "<group>";
+		};
+		E1483C171FD3D9B60030CA29 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E1483C211FD3D9D00030CA29 /* lsmessage_prompting_close.png */,
+				E1483C251FD3D9D00030CA29 /* lsmessage_prompting_close@2x.png */,
+				E1483C201FD3D9D00030CA29 /* lsmessage_prompting_close@3x.png */,
+				E1483C1E1FD3D9D00030CA29 /* lsmessage_prompting_error.png */,
+				E1483C1D1FD3D9D00030CA29 /* lsmessage_prompting_error@2x.png */,
+				E1483C261FD3D9D10030CA29 /* lsmessage_prompting_error@3x.png */,
+				E1483C1B1FD3D9D00030CA29 /* lsmessage_prompting_fail.png */,
+				E1483C231FD3D9D00030CA29 /* lsmessage_prompting_fail@2x.png */,
+				E1483C191FD3D9D00030CA29 /* lsmessage_prompting_fail@3x.png */,
+				E1483C1F1FD3D9D00030CA29 /* lsmessage_prompting_message.png */,
+				E1483C241FD3D9D00030CA29 /* lsmessage_prompting_message@2x.png */,
+				E1483C221FD3D9D00030CA29 /* lsmessage_prompting_message@3x.png */,
+				E1483C1A1FD3D9D00030CA29 /* lsmessage_prompting_succeed.png */,
+				E1483C181FD3D9D00030CA29 /* lsmessage_prompting_succeed@2x.png */,
+				E1483C1C1FD3D9D00030CA29 /* lsmessage_prompting_succeed@3x.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,8 +330,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1483C321FD3D9D10030CA29 /* lsmessage_prompting_fail@2x.png in Resources */,
 				E1483B9F1FD3BD790030CA29 /* Assets.xcassets in Resources */,
+				E1483C331FD3D9D10030CA29 /* lsmessage_prompting_message@2x.png in Resources */,
+				E1483C2E1FD3D9D10030CA29 /* lsmessage_prompting_message.png in Resources */,
+				E1483C2A1FD3D9D10030CA29 /* lsmessage_prompting_fail.png in Resources */,
+				E1483C2C1FD3D9D10030CA29 /* lsmessage_prompting_error@2x.png in Resources */,
+				E1483C301FD3D9D10030CA29 /* lsmessage_prompting_close.png in Resources */,
+				E1483C291FD3D9D10030CA29 /* lsmessage_prompting_succeed.png in Resources */,
+				E1483C2D1FD3D9D10030CA29 /* lsmessage_prompting_error.png in Resources */,
 				E1483BD11FD3BE6B0030CA29 /* 1.png in Resources */,
+				E1483C341FD3D9D10030CA29 /* lsmessage_prompting_close@2x.png in Resources */,
+				E1483C351FD3D9D10030CA29 /* lsmessage_prompting_error@3x.png in Resources */,
+				E1483C271FD3D9D10030CA29 /* lsmessage_prompting_succeed@2x.png in Resources */,
+				E1483C311FD3D9D10030CA29 /* lsmessage_prompting_message@3x.png in Resources */,
+				E1483C2F1FD3D9D10030CA29 /* lsmessage_prompting_close@3x.png in Resources */,
+				E1483C281FD3D9D10030CA29 /* lsmessage_prompting_fail@3x.png in Resources */,
+				E1483C2B1FD3D9D10030CA29 /* lsmessage_prompting_succeed@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,10 +419,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1483BCF1FD3BE6A0030CA29 /* LSMessage.m in Sources */,
-				E1483BCE1FD3BE6A0030CA29 /* LSMessageOperation.m in Sources */,
+				E1483BF61FD3D8F80030CA29 /* LSMessageOperation.m in Sources */,
+				E1483BF51FD3D8F80030CA29 /* LSMessage.m in Sources */,
 				E1483B9A1FD3BD790030CA29 /* ViewController.m in Sources */,
-				E1483BD01FD3BE6B0030CA29 /* LSMessageView.m in Sources */,
+				E1483BF41FD3D8F80030CA29 /* LSMessageView.m in Sources */,
 				E1483BA51FD3BD790030CA29 /* main.m in Sources */,
 				E1483B971FD3BD790030CA29 /* AppDelegate.m in Sources */,
 			);

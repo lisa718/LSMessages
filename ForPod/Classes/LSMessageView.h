@@ -35,6 +35,7 @@ typedef NS_ENUM(NSInteger,LSMessageViewEvent) {
 @property (nonatomic,strong) UIImage * _Nullable errorIcon UI_APPEARANCE_SELECTOR;
 @property (nonatomic,strong) UIImage * _Nullable messageIcon UI_APPEARANCE_SELECTOR;
 @property (nonatomic,strong) UIImage * _Nullable closeIcon UI_APPEARANCE_SELECTOR;
+@property (nonatomic,strong) UIColor * _Nullable backgroundColor UI_APPEARANCE_SELECTOR;
 
 
 - (instancetype _Nonnull )initWithFrame:(CGRect)frame

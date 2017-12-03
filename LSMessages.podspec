@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LSMessages"
-  s.version      = "1.0.2"
+  s.version      = "1.0.0"
   s.summary      = "Show Messages"
 
   # This description is used to generate tags and improve search results.
@@ -25,9 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-    This framework provides an easy to use class to show little notification views on the top of the screen. (à la Tweetbot).
-The notification moves from the top of the screen underneath the navigation bar and stays there for a few seconds, depending on the length of the displayed text. To dismiss a notification before the time runs out, the user can swipe it to the top or just tap it.
-There are 4 different types already set up for you: Success, Error, Warning, Message.
+                        LSMessages
                    DESC
 
   s.homepage     = "https://github.com/lisa718/LSMessages"
@@ -108,7 +106,7 @@ There are 4 different types already set up for you: Success, Error, Warning, Mes
   #
 
   # s.resource  = "icon.png"
-  s.resources = "ForPod/Asserts/*.png"
+  s.resources = "ForPod/Assets/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
