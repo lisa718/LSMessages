@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LSMessages"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "Show Messages"
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                        LSMessages
+                        LSMessages，can show four type of messages one by one,and can be dimissed by user and automatically dismissed
                    DESC
 
   s.homepage     = "https://github.com/lisa718/LSMessages"

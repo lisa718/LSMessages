@@ -152,7 +152,7 @@ static NSDictionary *defaultAppearceDictionary = nil;
 }
 - (void)configLayout {
 //    CGFloat paddingTop = self.paddingTop;//35;
-    CGFloat paddingBottom = self.paddingTop;//30;
+    CGFloat paddingBottom = 15;//30;
     CGFloat paddingLeft = 20;//40;
     CGFloat titleSpace = 5;//10;
     
