@@ -130,6 +130,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
     self.finished = YES;
     self.currentShowingView = nil;
 }
+
 - (void)addMessageViewAnimated:(LSMessageView *)message_view {
     
     // 此函数只能在主线程执行
@@ -140,17 +141,18 @@ const NSTimeInterval kAnimationDuration = 0.2;
     // 判断viewcontroller是否可见，是因为如果不可见，那么就可以直接finish，节省时间，动画倒计时等
     // 根据被添加的父亲controller的view的不同,来判断
     __block UIViewController * currentVC;
+    __block UINavigationController *currentNav;
+    __block UITabBarController *currentTab;
     
-    // 计算位置：都是相对于bar的view
+    // 计算位置：都是相对于CurrentVC的view
     __block CGPoint toPos = CGPointZero;
     void (^calculateToPos)(void) = ^void(){
         
-        UINavigationController *currentNav;
-        UITabBarController *currentTab;
-        currentNav = currentVC.navigationController;
-        currentTab = currentVC.tabBarController;
-        
-        
+        if (currentVC != nil) {
+            currentNav = currentVC.navigationController;
+            currentTab = currentVC.tabBarController;
+        }
+
         
         if (self.messagePosition == LSMessagePosition_Top) {
             
@@ -175,11 +177,15 @@ const NSTimeInterval kAnimationDuration = 0.2;
         }
         else if (self.messagePosition == LSMessagePosition_Bottom) {
             
+            // 添加到tabbar上面
             if (currentVC.hidesBottomBarWhenPushed == NO && currentTab.tabBar.isHidden == NO) {
                 toPos.y = CGRectGetHeight(currentVC.view.frame) - CGRectGetHeight(currentTab.tabBar.frame) - CGRectGetHeight(message_view.frame);
             }
         }
         else {
+            if (currentVC != nil ) {
+                toPos.y = -currentVC.view.frame.origin.y;
+            }
             // status
             if ([UIApplication sharedApplication].isStatusBarHidden == NO) {
                 // 增加message_view的padding
@@ -188,20 +194,58 @@ const NSTimeInterval kAnimationDuration = 0.2;
         }
     };
 
-    // 添加消息
+    // 添加View
     // find prop parent view to show message
+    BOOL shouldAddOnCurrentVC = NO;
     if (self.messagePosition == LSMessagePosition_OverNavBar) {
         // 如果overNavBar，那么不考虑传入的attatchedViewController，需要加当前的nav的bar下面或者tabcontroller的view上，都可以盖在上面,不需要判断是否有nav
         // 直接加到keywindow上就行了
+//        currentVC = [UIApplication sharedApplication].keyWindow.rootViewController;
         [[UIApplication sharedApplication].keyWindow addSubview:message_view];
         calculateToPos();
     }
-    else { // 其他位置,需要都需要加到topViewController上
-        BOOL isViewcontroller = ![self.attachedViewController isKindOfClass:[UITabBarController class]] &&
-        ![self.attachedViewController isKindOfClass:[UINavigationController class]] &&
-        [self.attachedViewController isKindOfClass:[UIViewController class]];
-        if (isViewcontroller) { // 指定添加到内容viewcontroller，如果vc可见，直接 add 到上面，然后进行位置判断设置
+    else {
+        
+        if([self.attachedViewController isKindOfClass:[UITabBarController class]]){
+            // 如果传入的是一个containerViewController，说明要全局展示
+            currentVC = [[self class] findCurrentViewControllerRecursively];
+            
+            if ([[self class] isVisibleViewController:self.attachedViewController]) {
+                [self.attachedViewController.view addSubview:message_view];
+                calculateToPos();
+            }
+            else { // 如果当前controller不可见
+                shouldAddOnCurrentVC = YES;
+            }
+        }
+        else if([self.attachedViewController isKindOfClass:[UINavigationController class]]){
+            
+            // 如果传入的是一个containerViewController，说明要全局展示
+            if ([[self class] isVisibleViewController:self.attachedViewController]) {
+                UINavigationController * nav = (UINavigationController *)self.attachedViewController;
+                if ([[self class] isNavBarInNavigationControllerShowed:nav]) {
+                    [self.attachedViewController.view insertSubview:message_view belowSubview:nav.navigationBar];
+                }
+                else {
+                    [self.attachedViewController.view addSubview:message_view];
+                }
+                
+                currentVC = nav.visibleViewController;
+                calculateToPos();
+            }
+            else { // 如果当前controller不可见
+                currentVC = [[self class] findCurrentViewControllerRecursively];
+                shouldAddOnCurrentVC = YES;
+            }
+
+        }
+        else { // 指定添加到内容viewcontroller，如果vc可见，直接 add 到上面，然后进行位置判断设置
             currentVC = self.attachedViewController;
+            shouldAddOnCurrentVC = YES;
+
+        }
+        
+        if (shouldAddOnCurrentVC) {
             if ([[self class] isVisibleViewController:currentVC]) {
                 [currentVC.view addSubview:message_view];
                 // 更新位置：需要判断是否有nav和tab
@@ -212,19 +256,8 @@ const NSTimeInterval kAnimationDuration = 0.2;
                 return;
             }
         }
-        else { // add 到当前的topViewController上,因为当前如果没有指定内容viewcontroller，那么说明都要消息要全局展示，所以执行时要选出当前的topViewController,添加在nav或者tab下面
-#warning different with specific viewcontroller
-            currentVC = [[self class] findCurrentViewControllerRecursively];
-            if ([[self class] isVisibleViewController:currentVC]) {
-                [currentVC.view addSubview:message_view];
-                // 更新位置:需要判断是否有nav和tab
-                calculateToPos();
-            }
-            else {
-                [self taskFinished];
-                return;
-            }
-        }
+        
+    
     }
     
     //
@@ -279,6 +312,9 @@ const NSTimeInterval kAnimationDuration = 0.2;
 - (void)dismissActiveMessageView {
     if (self.currentShowingView) {
         [self removeMessageViewAnimated:self.currentShowingView];
+    }
+    else {
+        [self taskFinished];
     }
 }
 

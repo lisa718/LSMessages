@@ -72,3 +72,12 @@ button
 
 #   pod安装方法
 pod 'LSMessage'
+
+## Screenshots
+
+**iOS 7 Design**
+
+![iOS 7 Error](http://www.toursprung.com/wp-content/uploads/2013/09/error_ios7.png)
+
+![iOS 7 Message](http://www.toursprung.com/wp-content/uploads/2013/09/warning_ios7.png)
+

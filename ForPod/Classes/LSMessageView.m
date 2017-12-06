@@ -165,7 +165,7 @@ static NSDictionary *defaultAppearceDictionary = nil;
         titleLeftX += self.image.size.width;
     }
     
-    CGFloat titleWidth = self.bounds.size.width - titleLeftX - paddingLeft;
+    CGFloat titleWidth = self.bounds.size.width - titleLeftX - paddingLeft*2;
     self.titleLabel.frame = CGRectMake(titleLeftX, titleLeftY, titleWidth, 0);
     [self.titleLabel sizeToFit];
     

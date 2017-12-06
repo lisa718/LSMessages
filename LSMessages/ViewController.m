@@ -141,7 +141,7 @@
 //                                          type:LSMessageType_Success
 //                                      durationSecs:LSMessageDuration_Seconds_AutoDisappear_After4
 //                                    atPosition:LSMessagePosition_Top];
-    [LSMessage showMessageWithTitle:@"成功" subtitle:@"sdfsdf" type:LSMessageType_Success];
+    [LSMessage showMessageWithTitle:@"成功" subtitle:@"sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfdsfdsfsd" type:LSMessageType_Success];
 }
 
 - (void)topMessageBtnClick:(UIButton *)button {
@@ -156,7 +156,7 @@
 }
 
 - (void)topErrorBtnClick:(UIButton *)button {
-    [LSMessage showMessageInViewController:self
+    [LSMessage showMessageInViewController:self.navigationController
                                          title:nil
                                       subtitle:@"评论成功啦！"
                                          image:nil
@@ -165,7 +165,7 @@
                                     atPosition:LSMessagePosition_Top];
 }
 - (void)topFailedBtnClick:(UIButton *)button {
-    [LSMessage showMessageInViewController:self
+    [LSMessage showMessageInViewController:self.navigationController
                                          title:nil
                                       subtitle:@"评论失败啦啦！水电费水电费水电费三等分是 舒服点是是  说的反倒是发"
                                          image:nil
@@ -175,7 +175,7 @@
 }
 
 - (void)topSuccessStayBtnClick:(UIButton *)button {
-    [LSMessage showMessageInViewController:self
+    [LSMessage showMessageInViewController:self.navigationController
                                          title:nil
                                       subtitle:nil
                                          image:nil
@@ -185,7 +185,7 @@
 }
 
 - (void)overbarBtnClick:(UIButton *)button {
-    [LSMessage showMessageInViewController:self
+    [LSMessage showMessageInViewController:self.navigationController
                                          title:@"SDsdfSDfsdfdfsdfsdf"
                                       subtitle:@"sdfsdfsdfsdfsdf"
                                          image:nil
@@ -195,7 +195,7 @@
 }
 
 - (void)bottomSuccessBtnClick:(UIButton *)button {
-    [LSMessage showMessageInViewController:self
+    [LSMessage showMessageInViewController:self.navigationController
                                          title:@"底部成功了"
                                       subtitle:@"设置成功了底部的弹框"
                                          image:nil
@@ -204,7 +204,7 @@
                                     atPosition:LSMessagePosition_Bottom];
 }
 - (void)bottomErrorStayBtnClick:(UIButton *)button {
-    [LSMessage showMessageInViewController:self
+    [LSMessage showMessageInViewController:self.navigationController
                                          title:@"底部成功了"
                                       subtitle:@"设置成功了底部的弹框"
                                          image:nil

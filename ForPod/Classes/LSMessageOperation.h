@@ -27,8 +27,8 @@ typedef NS_ENUM(NSInteger,LSMessagePosition);
 - (void)dismissActiveMessageView;
 - (BOOL)isEqual:(id _Nullable )object;
 - (void)cancelInvalidExecutingOperation;
-
-+ (BOOL)isMainQueue;
++ (UIViewController *)findCurrentViewControllerRecursively;
+//+ (BOOL)isMainQueue;
 
 
 @property (nonatomic,assign,readonly) BOOL  isMessageShowingNow;

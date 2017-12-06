@@ -9,9 +9,6 @@
 #import "LSMessage.h"
 #import "LSMessageOperation.h"
 
-// 如果不传任何attatchviewcontroller，消息会挂在这个controller上，变成全局controller
-__weak static UIViewController *_defaultViewController;
-
 @interface LSMessage ()
 
 @property (nonatomic,strong) NSOperationQueue * messageQueueInMainThread;
@@ -33,9 +30,6 @@ __weak static UIViewController *_defaultViewController;
 - (instancetype)init {
     self = [super init];
     if (self) {
-//        _messageQueueInMainThread = [[NSOperationQueue alloc] init];
-//        _messageQueueInMainThread.name = @"messageQueueInMainThread";
-//        _messageQueueInMainThread.maxConcurrentOperationCount = 1;
         _messageQueueInMainThread = [NSOperationQueue mainQueue];
     }
     return self;
@@ -47,7 +41,7 @@ __weak static UIViewController *_defaultViewController;
                     subtitle:(NSString *_Nullable)subtitle
                         type:(LSMessageType)type {
     
-    [[self class] showMessageInViewController:[[self class] defaultViewController]
+    [[self class] showMessageInViewController:[[LSMessageOperation class] findCurrentViewControllerRecursively]
                                         title:title
                                      subtitle:subtitle
                                         image:nil
@@ -58,7 +52,7 @@ __weak static UIViewController *_defaultViewController;
 
 + (void)showMessageWithTitle:(NSString * _Nullable)title
                         type:(LSMessageType)type {
-    [[self class] showMessageInViewController:[[self class] defaultViewController]
+    [[self class] showMessageInViewController:[[LSMessageOperation class] findCurrentViewControllerRecursively]
                                         title:title
                                      subtitle:nil
                                         image:nil
@@ -73,7 +67,7 @@ __weak static UIViewController *_defaultViewController;
                     subtitle:(NSString *_Nullable)subtitle
                        image:(UIImage *_Nullable)image
                         type:(LSMessageType)type {
-    [[self class] showMessageInViewController:[[self class] defaultViewController]
+    [[self class] showMessageInViewController:[[LSMessageOperation class] findCurrentViewControllerRecursively]
                                         title:title
                                      subtitle:subtitle
                                         image:image
@@ -89,7 +83,7 @@ __weak static UIViewController *_defaultViewController;
                 durationSecs:(NSTimeInterval)duration
                   atPosition:(LSMessagePosition)message_position {
     
-    [[self class] showMessageInViewController:[[self class] defaultViewController]
+    [[self class] showMessageInViewController:[[LSMessageOperation class] findCurrentViewControllerRecursively]//[[self class] defaultViewController]
                                         title:title
                                      subtitle:subtitle
                                         image:image
@@ -132,6 +126,9 @@ __weak static UIViewController *_defaultViewController;
     [queue.operations makeObjectsPerformSelector:@selector(cancelInvalidExecutingOperation)];
     
     // 生成一个NSOpration
+    if (view_controller == nil) {
+        view_controller = [UIApplication sharedApplication].keyWindow.rootViewController;
+    }
     LSMessageOperation * msgOperation = [[LSMessageOperation alloc] initWithViewController:view_controller
                                                                                              title:title
                                                                                           subtitle:subtitle
@@ -176,13 +173,13 @@ __weak static UIViewController *_defaultViewController;
     
 }
 #pragma mark - getters & setters
-+ (UIViewController *)defaultViewController
-{
-    __strong UIViewController *defaultViewController = _defaultViewController;
-    
-    if (defaultViewController == nil) {
-        defaultViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    }
-    return defaultViewController;
-}
+//+ (UIViewController *)defaultViewController
+//{
+//    __strong UIViewController *defaultViewController = _defaultViewController;
+//
+//    if (defaultViewController == nil) {
+//        defaultViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+//    }
+//    return defaultViewController;
+//}
 @end
