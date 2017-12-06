@@ -98,7 +98,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
 #pragma mark - Main Function
 
 - (void)executeTask {
-    NSLog(@"%s ; current thread = %@",__FUNCTION__,[NSThread currentThread]);
+    Debug_NSLog(@"%s ; current thread = %@",__FUNCTION__,[NSThread currentThread]);
     
     // 根据LSMessageType生成view合适的view
     // 初始化view
@@ -134,7 +134,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
 - (void)addMessageViewAnimated:(LSMessageView *)message_view {
     
     // 此函数只能在主线程执行
-    NSLog(@"current thread = %@",[NSThread currentThread]);
+    Debug_NSLog(@"current thread = %@",[NSThread currentThread]);
     
     // 将message_view添加到目标controller.view上，或者finished
     // 传入的attatchViewController可能有容器controller，也可能有topViewcontroller
@@ -371,8 +371,8 @@ const NSTimeInterval kAnimationDuration = 0.2;
     while (next != nil) {
         if ([next isKindOfClass:[UIViewController class]]) {
             if (![[self class] isVisibleViewController:(UIViewController*)next]) {
-//                [self dismissActiveMessageView];
-                [self cancel];
+                [self dismissActiveMessageView];
+//                [self cancel];
             }
             break;
         }
@@ -381,11 +381,11 @@ const NSTimeInterval kAnimationDuration = 0.2;
     }
 }
 
-- (void)cancel {
-    [super cancel];
-#warning setting isCancelled = YES
-    [self dismissActiveMessageView];
-}
+//- (void)cancel {
+//    [super cancel];
+//#warning setting isCancelled = YES
+//    [self dismissActiveMessageView];
+//}
 
 
 #pragma mark - Tool Method

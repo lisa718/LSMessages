@@ -119,8 +119,7 @@
                          atPosition:(LSMessagePosition)message_position {
     
     NSOperationQueue *queue = [LSMessage sharedInstance].messageQueueInMainThread;
-#warning debug can show log
-    NSLog(@"operations count = %ld,all operations = %@",queue.operations.count,queue.operations);
+    Debug_NSLog(@"operations count = %ld,all operations = %@",queue.operations.count,queue.operations);
 
     // 取消当前正在执行的任务，其实就是第0个任务
     [queue.operations makeObjectsPerformSelector:@selector(cancelInvalidExecutingOperation)];
@@ -150,7 +149,7 @@
     }
     [queue addOperation:msgOperation];
     msgOperation.completionBlock = ^ {
-        NSLog(@"finished");
+        Debug_NSLog(@"finished");
     };
 }
 
@@ -163,23 +162,15 @@
     // 不管有没有展示出来正在显示的view，直接取消任务
     if (firstOperation.isExecuting) {
         
-        [firstOperation cancel];
-        NSLog(@"operations count = %ld",queue.operations.count);
-//        hasActiveMessage = [firstOperation isMessageShowingNow];
-//        if (hasActiveMessage) {
-//            [firstOperation dismissActiveMessageView];
-//        }
+//        [firstOperation cancel];
+        Debug_NSLog(@"operations count = %ld",queue.operations.count);
+        BOOL hasActiveMessage = [firstOperation isMessageShowingNow];
+        if (hasActiveMessage) {
+            [firstOperation dismissActiveMessageView];
+        }
     }
     
 }
 #pragma mark - getters & setters
-//+ (UIViewController *)defaultViewController
-//{
-//    __strong UIViewController *defaultViewController = _defaultViewController;
-//
-//    if (defaultViewController == nil) {
-//        defaultViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-//    }
-//    return defaultViewController;
-//}
+
 @end

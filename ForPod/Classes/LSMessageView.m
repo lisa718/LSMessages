@@ -384,28 +384,34 @@ static NSDictionary *defaultAppearceDictionary = nil;
 - (void)setSuccessIcon:(UIImage *)successIcon {
     _successIcon = successIcon;
     if (self.type == LSMessageType_Success) {
-    self.image = successIcon?successIcon:[self defaultImage];
+        self.image = successIcon?successIcon:[self defaultImage];
+        [self.iconImageView setImage:self.image];
     }
 }
 
 - (void)setFailedIcon:(UIImage *)failedIcon {
     _failedIcon = failedIcon;
     if (self.type == LSMessageType_Failed) {
-    self.image = failedIcon?failedIcon:[self defaultImage];
+        self.image = failedIcon?failedIcon:[self defaultImage];
+        [self.iconImageView setImage:self.image];
+
     }
 }
 
 -(void)setErrorIcon:(UIImage *)errorIcon {
     _errorIcon = errorIcon;
     if (self.type == LSMessageType_Error) {
-    self.image = errorIcon?errorIcon:[self defaultImage];
+        self.image = errorIcon?errorIcon:[self defaultImage];
+        [self.iconImageView setImage:self.image];
+
     }
 }
 
 - (void)setMessageIcon:(UIImage *)messageIcon {
     _messageIcon = messageIcon;
     if (self.type == LSMessageType_Message) {
-    self.image = messageIcon?messageIcon:[self defaultImage];
+        self.image = messageIcon?messageIcon:[self defaultImage];
+        [self.iconImageView setImage:self.image];
     }
 }
 

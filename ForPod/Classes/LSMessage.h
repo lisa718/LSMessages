@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 @import UIKit;
 
+#ifdef DEBUG
+    #define Debug_NSLog(...) NSLog(__VA_ARGS__)
+#else
+    #define Debug_NSLog(...) void
+#endif
+
 
 // 消息类型
 typedef NS_ENUM(NSInteger,LSMessageType) {
