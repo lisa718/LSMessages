@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-// TODO 全局和非全局任务，全局任务不能取消，非全局任务需要当controller销毁后，进行销毁
 
 @import UIKit;
 @class LSMessageModel;

@@ -36,7 +36,8 @@ static NSDictionary *defaultAppearceDictionary = nil;
 @property (nonatomic,strong) UILabel            *titleLabel;
 @property (nonatomic,strong) UILabel            *subtitleLabel;
 @property (nonatomic,strong) UIImageView        *iconImageView;
-@property (nonatomic,strong) UIVisualEffectView *blurBackgroundImageView;
+@property (nonatomic,strong) UIView             *blurBackgroundImageView;
+//@property (nonatomic,strong) UIVisualEffectView *blurBackgroundImageView;
 @property (nonatomic,strong) UIImageView        *closeImageView;
 
 // ges
@@ -92,8 +93,8 @@ static NSDictionary *defaultAppearceDictionary = nil;
                                   image:(UIImage *_Nullable)image
                                    type:(LSMessageType)type {
     
-//    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-//    self = [super initWithEffect:blurEffect];
+    UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    self = [super initWithEffect:blurEffect];
     self = [super initWithFrame:frame];
     if (self) {
         // set model
@@ -101,36 +102,35 @@ static NSDictionary *defaultAppearceDictionary = nil;
         _type = type;
         _paddingTop = 15;
         
-        self.backgroundColor = [UIColor clearColor];
-//        self.autoresizingMask = (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight);
+//        self.backgroundColor = [UIColor clearColor];
 
-#warning no blur effect
+//#warning no blur effect
         // background
         self.blurBackgroundImageView.autoresizingMask = (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight);
         self.blurBackgroundImageView.backgroundColor = [self defaultBackgroudColor];
-        self.blurBackgroundImageView.alpha = 0.95;
+        self.blurBackgroundImageView.alpha = 0.5;
         self.blurBackgroundImageView.frame = self.bounds;
-        [self addSubview:self.blurBackgroundImageView];
+        [self.contentView addSubview:self.blurBackgroundImageView];
         
         // set view
         // titleLabel
         _title = title ? [title copy] : [self defaultTitle];
         self.titleLabel.text = _title;
-        [self addSubview:self.titleLabel];
+        [self.contentView addSubview:self.titleLabel];
         
         // subtitleLabel
         if (subtitle && ![subtitle isEqualToString:@""]) {
             self.subtitleLabel.text = subtitle;
-            [self addSubview:self.subtitleLabel];
+            [self.contentView addSubview:self.subtitleLabel];
         }
         
         // image
         _image = image ? image : [self defaultImage];
         if (_image) {
             [self.iconImageView setImage:_image];
-            [self addSubview:self.iconImageView];
+            [self.contentView addSubview:self.iconImageView];
         }
-        [self addSubview:self.closeImageView];
+        [self.contentView addSubview:self.closeImageView];
     
         // 布局
         [self configLayout];
@@ -182,7 +182,7 @@ static NSDictionary *defaultAppearceDictionary = nil;
     
     //
     self.frame = CGRectMake(0, self.frame.origin.y, self.frame.size.width, totalHeight);
-    self.blurBackgroundImageView.frame = self.bounds;
+//    self.blurBackgroundImageView.frame = self.bounds;
     
     // image 居中
     if (self.image) {
@@ -229,7 +229,8 @@ static NSDictionary *defaultAppearceDictionary = nil;
 - (UIImage *)defaultImage {
     
     NSString *key = [self currentTypeKey];
-    return [UIImage imageNamed:defaultAppearceDictionary[key][@"imageName"] inBundle:nil compatibleWithTraitCollection:nil];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    return [UIImage imageNamed:defaultAppearceDictionary[key][@"imageName"] inBundle:bundle compatibleWithTraitCollection:nil];
 }
 
 - (UIColor *)defaultBackgroudColor {
@@ -299,16 +300,18 @@ static NSDictionary *defaultAppearceDictionary = nil;
 
 - (UIImageView *)closeImageView {
     if(_closeImageView == nil) {
-        _closeImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lsmessage_prompting_close" inBundle:nil compatibleWithTraitCollection:nil]];
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        _closeImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lsmessage_prompting_close" inBundle:bundle compatibleWithTraitCollection:nil]];
     }
     return _closeImageView;
 }
 
-- (UIVisualEffectView *)blurBackgroundImageView {
+- (UIView *)blurBackgroundImageView {
     if(_blurBackgroundImageView == nil) {
         // blur effect
-        UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-        _blurBackgroundImageView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//        UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//        _blurBackgroundImageView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        _blurBackgroundImageView = [UIView new];
 
     }
     return _blurBackgroundImageView;
@@ -412,7 +415,7 @@ static NSDictionary *defaultAppearceDictionary = nil;
 }
 - (void)setBackgroundColorAlpha:(CGFloat)backgroundColorAlpha {
     _backgroundColorAlpha = backgroundColorAlpha;
-    self.blurBackgroundImageView.alpha = backgroundColorAlpha;
+    self.alpha = backgroundColorAlpha;
 }
 
 - (void)setSuccessBackgroundColor:(UIColor *)successBackgroundColor {

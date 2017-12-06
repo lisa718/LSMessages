@@ -17,7 +17,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
 }
 // NSOperation
 @property (nonatomic,assign,getter=isAsynchronous) BOOL asynchronous API_AVAILABLE(macos(10.8), ios(7.0), watchos(2.0), tvos(9.0));
-@property (nonatomic,assign,getter=isCancelled) BOOL cancelled;
+//@property (nonatomic,assign,getter=isCancelled) BOOL cancelled;
 @property (nonatomic,assign,getter=isFinished) BOOL finished;
 @property (nonatomic,assign,getter=isExecuting) BOOL executing;
 
@@ -27,18 +27,18 @@ const NSTimeInterval kAnimationDuration = 0.2;
 @property (nonatomic,copy)   NSString               *title;
 @property (nonatomic,copy)   NSString               *subtitle;
 @property (nonatomic,strong) UIImage                *hintIcon;
-@property (nonatomic,assign) LSMessageType      type;
+@property (nonatomic,assign) LSMessageType          type;
 @property (nonatomic,assign) NSTimeInterval         durationSecs;
-@property (nonatomic,assign) LSMessagePosition  messagePosition;
+@property (nonatomic,assign) LSMessagePosition      messagePosition;
 @property (nonatomic,strong) NSTimer                *disappearTimer;
-@property (nonatomic,weak)   LSMessageView      *currentShowingView;
+@property (nonatomic,weak)   LSMessageView          *currentShowingView;
 
 
 @end
 
 @implementation LSMessageOperation
 
-@synthesize asynchronous = _asynchronous,cancelled = _cancelled,finished = _finished,executing = _executing;
+@synthesize asynchronous = _asynchronous,finished = _finished,executing = _executing;
 
 - (instancetype _Nonnull)initWithViewController:(UIViewController *_Nonnull)view_controller
                                            title:(NSString *_Nonnull)title
@@ -66,25 +66,32 @@ const NSTimeInterval kAnimationDuration = 0.2;
     
     NSLog(@"%s ; current thread = %@",__FUNCTION__,[NSThread currentThread]);
     self.executing = YES;
-    self.cancelled = NO;
     self.finished = NO;
+    // 不要重写，需要return
+    if (self.isCancelled) {
+        [self taskFinished];
+        return;
+    }
     // 如果要添加的attachedViewController不存在或者被释放，则直接返回
     if (self.attachedViewController == nil) {
         [self taskFinished];
         return;
     }
     
+    // 由于在主队列执行，所以一定会在主线程执行
+    [self executeTask];
+    
     // 由于Task不一定需要在MainQueue
 //    if ([[self class] isMainQueue]) {
-    if ([NSThread isMainThread]) {
-        [self executeTask];
-    }
-    else {
-#warning dispatch_aync is right?
-      dispatch_async(dispatch_get_main_queue(), ^{
-          [self executeTask];
-      });
-    }
+//    if ([NSThread isMainThread]) {
+//        [self executeTask];
+//    }
+//    else {
+//#warning dispatch_aync is right?
+//      dispatch_async(dispatch_get_main_queue(), ^{
+//          [self executeTask];
+//      });
+//    }
 }
 
 
@@ -134,7 +141,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
     // 根据被添加的父亲controller的view的不同,来判断
     __block UIViewController * currentVC;
     
-    // 计算位置
+    // 计算位置：都是相对于bar的view
     __block CGPoint toPos = CGPointZero;
     void (^calculateToPos)(void) = ^void(){
         
@@ -143,7 +150,13 @@ const NSTimeInterval kAnimationDuration = 0.2;
         currentNav = currentVC.navigationController;
         currentTab = currentVC.tabBarController;
         
+        
+        
         if (self.messagePosition == LSMessagePosition_Top) {
+            
+            if (currentVC != nil ) {
+                toPos.y = -currentVC.view.frame.origin.y;
+            }
             // nav
             if ([[self class] isNavBarInNavigationControllerShowed:currentNav]) {
                 toPos.y += CGRectGetHeight(currentNav.navigationBar.frame);
@@ -161,6 +174,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
             }
         }
         else if (self.messagePosition == LSMessagePosition_Bottom) {
+            
             if (currentVC.hidesBottomBarWhenPushed == NO && currentTab.tabBar.isHidden == NO) {
                 toPos.y = CGRectGetHeight(currentVC.view.frame) - CGRectGetHeight(currentTab.tabBar.frame) - CGRectGetHeight(message_view.frame);
             }
@@ -263,14 +277,8 @@ const NSTimeInterval kAnimationDuration = 0.2;
 
 
 - (void)dismissActiveMessageView {
-//     if ([[self class] isMainQueue]) {
-    if ([NSThread isMainThread]) {
+    if (self.currentShowingView) {
         [self removeMessageViewAnimated:self.currentShowingView];
-    }
-    else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self removeMessageViewAnimated:self.currentShowingView];
-        });
     }
 }
 
@@ -314,7 +322,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
 
 - (void)cancelInvalidExecutingOperation {
     
-    if (!self.executing) {
+    if (!self.isExecuting) {
         return;
     }
     
@@ -327,14 +335,20 @@ const NSTimeInterval kAnimationDuration = 0.2;
     while (next != nil) {
         if ([next isKindOfClass:[UIViewController class]]) {
             if (![[self class] isVisibleViewController:(UIViewController*)next]) {
-                [self dismissActiveMessageView];
+//                [self dismissActiveMessageView];
+                [self cancel];
             }
             break;
         }
         next = [next nextResponder];
 
     }
-    
+}
+
+- (void)cancel {
+    [super cancel];
+#warning setting isCancelled = YES
+    [self dismissActiveMessageView];
 }
 
 
@@ -441,15 +455,6 @@ const NSTimeInterval kAnimationDuration = 0.2;
     [self willChangeValueForKey:@"isFinished"];
     _finished = finished;
     [self didChangeValueForKey:@"isFinished"];
-}
-
-- (void)setCancelled:(BOOL)cancelled {
-    [self willChangeValueForKey:@"isCancelled"];
-    _cancelled = cancelled;
-    if (cancelled) {
-        [self dismissActiveMessageView];
-    }
-    [self didChangeValueForKey:@"isCancelled"];
 }
 
 - (void)setExecuting:(BOOL)executing {

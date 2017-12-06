@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger,LSMessageViewEvent) {
     LSMessageViewEvent_Swipe_Down = 2
 };
 
-@interface LSMessageView : UIView
+@interface LSMessageView :UIVisualEffectView//: UIView
 
 @property (nonatomic,copy,readonly) NSString            * _Nonnull title;
 @property (nonatomic,copy,readonly) NSString            * _Nullable subtitle;

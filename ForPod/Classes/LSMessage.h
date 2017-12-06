@@ -58,6 +58,13 @@ typedef NS_ENUM(NSInteger,LSMessageDuration_Seconds) {
                 durationSecs:(NSTimeInterval)duration
                   atPosition:(LSMessagePosition)message_position;
 
+//+ (void)showMessageWithTitle:(NSString *_Nullable)title
+//                    subtitle:(NSString *_Nullable)subtitle
+//                       image:(UIImage *_Nullable)image
+//                        type:(LSMessageType)type
+//                durationSecs:(NSTimeInterval)duration
+//                  atPosition:(LSMessagePosition)message_position;
+
 
 // 可以在指定的viewcontroller展示，当viewcontroller不可见或者dealloc，触发消息展示，相应的消息队列会不展示此消息
 + (void)showMessageInViewController:(UIViewController *_Nonnull)view_controller
@@ -75,9 +82,9 @@ typedef NS_ENUM(NSInteger,LSMessageDuration_Seconds) {
 
 
 // 让当前展示的消息消失
-+ (BOOL)dismissActiveMessage;
++ (void)dismissActiveMessage;
 
 
-#warning with no button?
+#warning with no button?function missing
 
 @end

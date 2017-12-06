@@ -33,9 +33,10 @@ __weak static UIViewController *_defaultViewController;
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _messageQueueInMainThread = [[NSOperationQueue alloc] init];
-        _messageQueueInMainThread.name = @"messageQueueInMainThread";
-        _messageQueueInMainThread.maxConcurrentOperationCount = 1;
+//        _messageQueueInMainThread = [[NSOperationQueue alloc] init];
+//        _messageQueueInMainThread.name = @"messageQueueInMainThread";
+//        _messageQueueInMainThread.maxConcurrentOperationCount = 1;
+        _messageQueueInMainThread = [NSOperationQueue mainQueue];
     }
     return self;
 }
@@ -124,9 +125,10 @@ __weak static UIViewController *_defaultViewController;
                          atPosition:(LSMessagePosition)message_position {
     
     NSOperationQueue *queue = [LSMessage sharedInstance].messageQueueInMainThread;
+#warning debug can show log
     NSLog(@"operations count = %ld,all operations = %@",queue.operations.count,queue.operations);
 
-    // 取消所有attatchView_controller 为nil的任务
+    // 取消当前正在执行的任务，其实就是第0个任务
     [queue.operations makeObjectsPerformSelector:@selector(cancelInvalidExecutingOperation)];
     
     // 生成一个NSOpration
@@ -150,27 +152,28 @@ __weak static UIViewController *_defaultViewController;
         [msgOperation addDependency:lastOperation];
     }
     [queue addOperation:msgOperation];
+    msgOperation.completionBlock = ^ {
+        NSLog(@"finished");
+    };
 }
 
-+ (BOOL)dismissActiveMessage {
++ (void)dismissActiveMessage {
     // 选出正在执行的operation，也就是第0个
     NSOperationQueue *queue = [LSMessage sharedInstance].messageQueueInMainThread;
     LSMessageOperation * firstOperation = queue.operations.firstObject;
     
-    // 判断他是不是正在执行中,是不是有view展示
-    BOOL hasActiveMessage = [firstOperation isMessageShowingNow];
-    if (hasActiveMessage) {
-#warning cancel don not call remove operation immediately
-        // 如果是则调用cancel operation 会调用remove方法
-        if (firstOperation.executing){
-            [firstOperation cancel];
-            NSLog(@"operations count = %ld",queue.operations.count);
-        }
-
-        [firstOperation dismissActiveMessageView];
+//    BOOL hasActiveMessage = NO;
+    // 不管有没有展示出来正在显示的view，直接取消任务
+    if (firstOperation.isExecuting) {
+        
+        [firstOperation cancel];
+        NSLog(@"operations count = %ld",queue.operations.count);
+//        hasActiveMessage = [firstOperation isMessageShowingNow];
+//        if (hasActiveMessage) {
+//            [firstOperation dismissActiveMessageView];
+//        }
     }
     
-    return hasActiveMessage;
 }
 #pragma mark - getters & setters
 + (UIViewController *)defaultViewController
