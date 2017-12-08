@@ -51,6 +51,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     // nav
     self.title = @"测试提示框";
+    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
 //    self.navigationController.navigationBarHidden = YES;
 
     if (self.navigationController == nil) {
@@ -189,8 +190,8 @@
                                          title:@"SDsdfSDfsdfdfsdfsdf"
                                       subtitle:@"sdfsdfsdfsdfsdf"
                                          image:nil
-                                          type:LSMessageType_Success
-                                  durationSecs:LSMessageDuration_Seconds_AutoDisappear_After4
+                                          type:LSMessageType_Message
+                                  durationSecs:LSMessageDuration_Seconds_Stay
                                     atPosition:LSMessagePosition_OverNavBar];
 }
 
