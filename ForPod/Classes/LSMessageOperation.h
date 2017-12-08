@@ -27,11 +27,21 @@ typedef NS_ENUM(NSInteger,LSMessagePosition);
 - (void)dismissActiveMessageView;
 - (BOOL)isEqual:(id _Nullable )object;
 - (void)cancelInvalidExecutingOperation;
-+ (UIViewController *)findCurrentViewControllerRecursively;
++ (UIViewController * _Nullable)findCurrentViewControllerRecursively;
 //+ (BOOL)isMainQueue;
 
 
 @property (nonatomic,assign,readonly) BOOL  isMessageShowingNow;
 
 
+@end
+
+
+//-----------------Timer-------------
+@interface NSTimer (NonRetain)
++ (NSTimer *)scheduledNonRetainTimerWithTimeInterval:(NSTimeInterval)ti
+                                              target:(id)aTarget
+                                            selector:(SEL)aSelector
+                                            userInfo:(nullable id)userInfo
+                                             repeats:(BOOL)yesOrNo;
 @end

@@ -149,7 +149,7 @@
     }
     [queue addOperation:msgOperation];
     msgOperation.completionBlock = ^ {
-        Debug_NSLog(@"finished");
+        Debug_NSLog(@"%@",self);
     };
 }
 

@@ -22,9 +22,7 @@ static NSDictionary *defaultAppearceDictionary = nil;
 #define IS_IPHONEX (([[UIScreen mainScreen] bounds].size.height - 812) ? NO : YES)
 
 
-@interface LSMessageView () {
-    
-}
+@interface LSMessageView ()
 
 // model
 @property (nonatomic,copy) NSString            * _Nonnull title;
@@ -36,8 +34,7 @@ static NSDictionary *defaultAppearceDictionary = nil;
 @property (nonatomic,strong) UILabel            *titleLabel;
 @property (nonatomic,strong) UILabel            *subtitleLabel;
 @property (nonatomic,strong) UIImageView        *iconImageView;
-@property (nonatomic,strong) UIView             *blurBackgroundImageView;
-//@property (nonatomic,strong) UIVisualEffectView *blurBackgroundImageView;
+//@property (nonatomic,strong) UIView             *blurBackgroundImageView;
 @property (nonatomic,strong) UIImageView        *closeImageView;
 
 // ges
@@ -102,15 +99,16 @@ static NSDictionary *defaultAppearceDictionary = nil;
         _type = type;
         _paddingTop = 15;
         
-//        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [self defaultBackgroudColor];
 
 //#warning no blur effect
         // background
-        self.blurBackgroundImageView.autoresizingMask = (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight);
-        self.blurBackgroundImageView.backgroundColor = [self defaultBackgroudColor];
-        self.blurBackgroundImageView.alpha = 0.5;
-        self.blurBackgroundImageView.frame = self.bounds;
-        [self.contentView addSubview:self.blurBackgroundImageView];
+//        self.blurBackgroundImageView.autoresizingMask = (UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight);
+//        self.blurBackgroundImageView.backgroundColor = [self defaultBackgroudColor];
+////        self.blurBackgroundImageView.alpha = 0.5;
+//        self.blurBackgroundImageView.frame = self.bounds;
+//        [self.contentView addSubview:self.blurBackgroundImageView];
+        
         
         // set view
         // titleLabel
@@ -235,7 +233,8 @@ static NSDictionary *defaultAppearceDictionary = nil;
 
 - (UIColor *)defaultBackgroudColor {
     NSString *key = [self currentTypeKey];
-    return [UIColor colorWithHexString:defaultAppearceDictionary[key][@"backgroundColor"] alpha:1];
+    return [UIColor colorWithHexString:defaultAppearceDictionary[key][@"backgroundColor"] alpha:0.75];
+//    return nil;
 }
 
 
@@ -306,16 +305,16 @@ static NSDictionary *defaultAppearceDictionary = nil;
     return _closeImageView;
 }
 
-- (UIView *)blurBackgroundImageView {
-    if(_blurBackgroundImageView == nil) {
-        // blur effect
-//        UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-//        _blurBackgroundImageView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-        _blurBackgroundImageView = [UIView new];
-
-    }
-    return _blurBackgroundImageView;
-}
+//- (UIView *)blurBackgroundImageView {
+//    if(_blurBackgroundImageView == nil) {
+//        // blur effect
+////        UIVisualEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+////        _blurBackgroundImageView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//        _blurBackgroundImageView = [UIView new];
+//
+//    }
+//    return _blurBackgroundImageView;
+//}
 
 #pragma mark -  UI_APPEARANCE_SELECTOR
 - (void)setTitleFont:(UIFont *)title_font {
@@ -419,36 +418,32 @@ static NSDictionary *defaultAppearceDictionary = nil;
     _closeIcon = closeIcon;
     [self.closeImageView setImage:closeIcon];
 }
-- (void)setBackgroundColorAlpha:(CGFloat)backgroundColorAlpha {
-    _backgroundColorAlpha = backgroundColorAlpha;
-    self.alpha = backgroundColorAlpha;
-}
 
 - (void)setSuccessBackgroundColor:(UIColor *)successBackgroundColor {
     _successBackgroundColor = successBackgroundColor;
     if (self.type == LSMessageType_Success) {
-        self.blurBackgroundImageView.backgroundColor = successBackgroundColor?successBackgroundColor:[self defaultBackgroudColor];
+        self.backgroundColor = successBackgroundColor?successBackgroundColor:[self defaultBackgroudColor];
     }
 }
 
 - (void)setErrorBackgroundColor:(UIColor *)errorBackgroundColor {
     _errorBackgroundColor = errorBackgroundColor;
     if (self.type == LSMessageType_Error) {
-        self.blurBackgroundImageView.backgroundColor = errorBackgroundColor?errorBackgroundColor:[self defaultBackgroudColor];
+        self.backgroundColor = errorBackgroundColor?errorBackgroundColor:[self defaultBackgroudColor];
     }
 }
 
 - (void)setFailedBackgroundColor:(UIColor *)failedBackgroundColor {
     _failedBackgroundColor = failedBackgroundColor;
     if (self.type == LSMessageType_Failed) {
-        self.blurBackgroundImageView.backgroundColor = failedBackgroundColor?failedBackgroundColor:[self defaultBackgroudColor];
+        self.backgroundColor = failedBackgroundColor?failedBackgroundColor:[self defaultBackgroudColor];
     }
 }
 
 - (void)setMessageBackgroundColor:(UIColor *)messageBackgroundColor {
     _messageBackgroundColor = messageBackgroundColor;
     if (self.type == LSMessageType_Message) {
-        self.blurBackgroundImageView.backgroundColor = messageBackgroundColor?messageBackgroundColor:[self defaultBackgroudColor];
+        self.backgroundColor = messageBackgroundColor?messageBackgroundColor:[self defaultBackgroudColor];
     }
 }
 

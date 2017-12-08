@@ -49,7 +49,6 @@ typedef NS_ENUM(NSInteger,LSMessageViewEvent) {
 @property (nonatomic,strong) UIImage * _Nullable closeIcon UI_APPEARANCE_SELECTOR;
 
 // background
-@property (nonatomic,assign) CGFloat   backgroundColorAlpha UI_APPEARANCE_SELECTOR;
 @property (nonatomic,strong) UIColor * _Nullable successBackgroundColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic,strong) UIColor * _Nullable failedBackgroundColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic,strong) UIColor * _Nullable errorBackgroundColor UI_APPEARANCE_SELECTOR;

@@ -141,7 +141,7 @@
 //                                          type:LSMessageType_Success
 //                                      durationSecs:LSMessageDuration_Seconds_AutoDisappear_After4
 //                                    atPosition:LSMessagePosition_Top];
-    [LSMessage showMessageWithTitle:@"成功" subtitle:@"sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfdsfdsfsd" type:LSMessageType_Success];
+    [LSMessage showMessageWithTitle:@"成功" subtitle:@"sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfdsfdsfsd的水电费水电费三等分山东师范三等分说的防守打法说的防守打法三等分说的发斯蒂芬斯蒂芬三等分三等分第三方三等分三等分三等分三等分说的三等分三等分三等分水电费水电费说的发生的是反倒是说的说的sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfdsfdsfsd的水电费水电费三等分山东师范三等分说的防守打法说的防守打法三等分说的发斯蒂芬斯蒂芬三等分三等分第三方三等分三等分三等分三等分说的三等分三等分三等分水电费水电费说的发生的是反倒是说的说的" type:LSMessageType_Success];
 }
 
 - (void)topMessageBtnClick:(UIButton *)button {

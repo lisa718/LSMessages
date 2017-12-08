@@ -33,6 +33,8 @@ const NSTimeInterval kAnimationDuration = 0.2;
 @property (nonatomic,strong) NSTimer                *disappearTimer;
 @property (nonatomic,weak)   LSMessageView          *currentShowingView;
 
+@property (nonatomic,copy)   void (^calculateToPos)(void);
+
 
 @end
 
@@ -118,13 +120,27 @@ const NSTimeInterval kAnimationDuration = 0.2;
     // 将view插入到view_controller的view层级中，并根据duration 设置展示时间
     [self addMessageViewAnimated:messageView];
     
+    //
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
+    [nc addObserver:self selector:@selector(statusBarOrientationDidChange:)
+               name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
+    
+    
+}
+
+- (void)statusBarOrientationDidChange:(NSNotification *)notification {
+
+    if(self.currentShowingView.superview) {
+        self.calculateToPos();
+    }
+    Debug_NSLog(@"%s",__FUNCTION__);
 }
 
 - (void)taskFinished {
     
     // 停止计时器,也必须在主线程上，要不然不能停止，没有runloop
-#warning "NSTimer in multithread can not stop appropriately，need change timer"
+//#warning "NSTimer in multithread can not stop appropriately，need change timer"
     [self stopTimer];
     self.executing = NO;
     self.finished = YES;
@@ -146,13 +162,15 @@ const NSTimeInterval kAnimationDuration = 0.2;
     
     // 计算位置：都是相对于CurrentVC的view
     __block CGPoint toPos = CGPointZero;
-    void (^calculateToPos)(void) = ^void(){
+    __weak typeof(self) weakSelf = self;
+    self.calculateToPos = ^void(){
+        __strong typeof(self) strongSelf = weakSelf;
         
+        message_view.frame = CGRectMake(message_view.frame.origin.x, message_view.frame.origin.y, [UIScreen mainScreen].bounds.size.width, message_view.bounds.size.height);
         if (currentVC != nil) {
             currentNav = currentVC.navigationController;
             currentTab = currentVC.tabBarController;
         }
-
         
         if (self.messagePosition == LSMessagePosition_Top) {
             
@@ -160,18 +178,18 @@ const NSTimeInterval kAnimationDuration = 0.2;
                 toPos.y = -currentVC.view.frame.origin.y;
             }
             // nav
-            if ([[self class] isNavBarInNavigationControllerShowed:currentNav]) {
-                toPos.y += CGRectGetHeight(currentNav.navigationBar.frame);
-                // status
-                if ([UIApplication sharedApplication].isStatusBarHidden == NO) {
-                    toPos.y += CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
-                }
+            if ([[strongSelf class] isNavBarInNavigationControllerShowed:currentNav]) {
+                toPos.y += CGRectGetMaxY(currentNav.navigationBar.frame);
+//                // status
+//                if ([UIApplication sharedApplication].isStatusBarHidden == NO) {
+//                    toPos.y += CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+//                }
             }
             else {
                 // status
                 if ([UIApplication sharedApplication].isStatusBarHidden == NO) {
                     // 增加message_view的padding
-                    message_view.paddingTop += CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+                    message_view.paddingTop += CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame);
                 }
             }
         }
@@ -189,9 +207,11 @@ const NSTimeInterval kAnimationDuration = 0.2;
             // status
             if ([UIApplication sharedApplication].isStatusBarHidden == NO) {
                 // 增加message_view的padding
-                message_view.paddingTop += CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+                message_view.paddingTop += CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame);
             }
         }
+        
+        
     };
 
     // 添加View
@@ -202,7 +222,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
         // 直接加到keywindow上就行了
 //        currentVC = [UIApplication sharedApplication].keyWindow.rootViewController;
         [[UIApplication sharedApplication].keyWindow addSubview:message_view];
-        calculateToPos();
+        self.calculateToPos();
     }
     else {
         
@@ -212,7 +232,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
             
             if ([[self class] isVisibleViewController:self.attachedViewController]) {
                 [self.attachedViewController.view addSubview:message_view];
-                calculateToPos();
+                self.calculateToPos();
             }
             else { // 如果当前controller不可见
                 shouldAddOnCurrentVC = YES;
@@ -231,7 +251,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
                 }
                 
                 currentVC = nav.visibleViewController;
-                calculateToPos();
+                self.calculateToPos();
             }
             else { // 如果当前controller不可见
                 currentVC = [[self class] findCurrentViewControllerRecursively];
@@ -249,7 +269,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
             if ([[self class] isVisibleViewController:currentVC]) {
                 [currentVC.view addSubview:message_view];
                 // 更新位置：需要判断是否有nav和tab
-                calculateToPos();
+                self.calculateToPos();
             }
             else {
                 [self taskFinished];
@@ -276,7 +296,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
     }
     if (self.durationSecs >= LSMessageDuration_Seconds_AutoDisappear_After4) {
         NSTimeInterval d  = self.durationSecs > 0 ? self.durationSecs : 4;
-        self.disappearTimer = [NSTimer scheduledTimerWithTimeInterval:d target:self selector:@selector(dismissActiveMessageView) userInfo:nil repeats:NO];
+        self.disappearTimer = [NSTimer scheduledNonRetainTimerWithTimeInterval:d target:self selector:@selector(dismissActiveMessageView) userInfo:nil repeats:NO];
         
     }
 }
@@ -380,12 +400,6 @@ const NSTimeInterval kAnimationDuration = 0.2;
 
     }
 }
-
-//- (void)cancel {
-//    [super cancel];
-//#warning setting isCancelled = YES
-//    [self dismissActiveMessageView];
-//}
 
 
 #pragma mark - Tool Method
@@ -506,4 +520,40 @@ const NSTimeInterval kAnimationDuration = 0.2;
     return NO;
 }
 
+@end
+// --------------------------- Safe Timer -----------------------
+
+@interface ForwardingTarget : NSObject
+
+@property (nonatomic,weak) id realTarget;
+@end
+
+@implementation ForwardingTarget
+
+- (instancetype)initWithRealTarget:(id)real_target {
+    self = [super init];
+    if (self) {
+        _realTarget = real_target;
+    }
+    return self;
+}
+
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    return self.realTarget;
+}
+
+
+@end
+
+@implementation NSTimer (NonRetain)
++ (NSTimer *)scheduledNonRetainTimerWithTimeInterval:(NSTimeInterval)seconds
+                                              target:(id)aTarget
+                                            selector:(SEL)aSelector
+                                            userInfo:(nullable id)userInfo
+                                             repeats:(BOOL)isRepeat {
+    
+    
+    ForwardingTarget *target = [[ForwardingTarget alloc] initWithRealTarget:aTarget];
+    return [NSTimer scheduledTimerWithTimeInterval:seconds target:target selector:aSelector userInfo:userInfo repeats:isRepeat];
+}
 @end
