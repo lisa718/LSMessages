@@ -33,6 +33,7 @@
 		E1483C331FD3D9D10030CA29 /* lsmessage_prompting_message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C241FD3D9D00030CA29 /* lsmessage_prompting_message@2x.png */; };
 		E1483C341FD3D9D10030CA29 /* lsmessage_prompting_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C251FD3D9D00030CA29 /* lsmessage_prompting_close@2x.png */; };
 		E1483C351FD3D9D10030CA29 /* lsmessage_prompting_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1483C261FD3D9D10030CA29 /* lsmessage_prompting_error@3x.png */; };
+		E1B38A741FDAEA0C00408309 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B38A721FDAEA0B00408309 /* NSObject+DLIntrospection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		E1483C241FD3D9D00030CA29 /* lsmessage_prompting_message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_message@2x.png"; path = "ForPod/Assets/lsmessage_prompting_message@2x.png"; sourceTree = SOURCE_ROOT; };
 		E1483C251FD3D9D00030CA29 /* lsmessage_prompting_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_close@2x.png"; path = "ForPod/Assets/lsmessage_prompting_close@2x.png"; sourceTree = SOURCE_ROOT; };
 		E1483C261FD3D9D10030CA29 /* lsmessage_prompting_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lsmessage_prompting_error@3x.png"; path = "ForPod/Assets/lsmessage_prompting_error@3x.png"; sourceTree = SOURCE_ROOT; };
+		E1B38A721FDAEA0B00408309 /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
+		E1B38A731FDAEA0B00408309 /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 		E1483B891FD3BD790030CA29 = {
 			isa = PBXGroup;
 			children = (
+				E1B38A731FDAEA0B00408309 /* NSObject+DLIntrospection.h */,
+				E1B38A721FDAEA0B00408309 /* NSObject+DLIntrospection.m */,
 				E1483B941FD3BD790030CA29 /* LSMessages */,
 				E1483BAD1FD3BD790030CA29 /* LSMessagesTests */,
 				E1483BB81FD3BD790030CA29 /* LSMessagesUITests */,
@@ -419,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B38A741FDAEA0C00408309 /* NSObject+DLIntrospection.m in Sources */,
 				E1483BF61FD3D8F80030CA29 /* LSMessageOperation.m in Sources */,
 				E1483BF51FD3D8F80030CA29 /* LSMessage.m in Sources */,
 				E1483B9A1FD3BD790030CA29 /* ViewController.m in Sources */,

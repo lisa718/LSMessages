@@ -160,7 +160,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
     __block UINavigationController *currentNav;
     __block UITabBarController *currentTab;
     
-    // 计算位置：都是相对于CurrentVC的view
+    // 计算位置：CurrentVC不空则相对于vc；tab不空则相对于tab
     __block CGPoint toPos = CGPointZero;
     __weak typeof(self) weakSelf = self;
     self.calculateToPos = ^void(){
@@ -170,6 +170,10 @@ const NSTimeInterval kAnimationDuration = 0.2;
         if (currentVC != nil) {
             currentNav = currentVC.navigationController;
             currentTab = currentVC.tabBarController;
+        }
+        else if (currentTab != nil) {
+            // find nav
+            currentNav = [[self class] findVisibleNavFromTab:currentTab];
         }
         
         if (self.messagePosition == LSMessagePosition_Top) {
@@ -228,13 +232,13 @@ const NSTimeInterval kAnimationDuration = 0.2;
         
         if([self.attachedViewController isKindOfClass:[UITabBarController class]]){
             // 如果传入的是一个containerViewController，说明要全局展示
-            currentVC = [[self class] findCurrentViewControllerRecursively];
-            
             if ([[self class] isVisibleViewController:self.attachedViewController]) {
                 [self.attachedViewController.view addSubview:message_view];
+                currentTab = (UITabBarController *)self.attachedViewController;
                 self.calculateToPos();
             }
             else { // 如果当前controller不可见
+                currentVC = [[self class] findCurrentViewControllerRecursively];
                 shouldAddOnCurrentVC = YES;
             }
         }
@@ -245,13 +249,15 @@ const NSTimeInterval kAnimationDuration = 0.2;
                 UINavigationController * nav = (UINavigationController *)self.attachedViewController;
                 if ([[self class] isNavBarInNavigationControllerShowed:nav]) {
                     [self.attachedViewController.view insertSubview:message_view belowSubview:nav.navigationBar];
+                    currentNav = nav;
+                    self.calculateToPos();
                 }
                 else {
                     [self.attachedViewController.view addSubview:message_view];
+                    self.calculateToPos();
                 }
                 
-                currentVC = nav.visibleViewController;
-                self.calculateToPos();
+//                currentVC = nav.visibleViewController;
             }
             else { // 如果当前controller不可见
                 currentVC = [[self class] findCurrentViewControllerRecursively];
@@ -434,6 +440,16 @@ const NSTimeInterval kAnimationDuration = 0.2;
     BOOL isVisible = view_controller.isViewLoaded && view_controller.view.window;
     return isVisible;
     
+}
+
++ (UINavigationController *)findVisibleNavFromTab:(UITabBarController *)tabbar_controller {
+    if (tabbar_controller != nil) {
+        UIViewController * tmp = tabbar_controller.selectedViewController;
+        if ([tmp isKindOfClass:[UINavigationController class]] && [[self class] isVisibleViewController:tmp]) {
+            return  (UINavigationController *)tmp;
+        }
+    }
+    return nil;
 }
 + (UIViewController *)findCurrentViewControllerRecursively {
 

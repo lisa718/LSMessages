@@ -51,8 +51,15 @@
     // Do any additional setup after loading the view, typically from a nib.
     // nav
     self.title = @"测试提示框";
-    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
-//    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
+//    self.navigationController.navigationBar.translucent = NO;
+//    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    UIView * systemBackgroundView = [self.navigationController.navigationBar valueForKey:@"backgroundView"];
+    UIView * customBackgroundView = [[UIView alloc] initWithFrame:systemBackgroundView.frame];
+    customBackgroundView.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:1];
+    [self.navigationController.navigationBar setValue:customBackgroundView forKey:@"backgroundView"];
+
+    
 
     if (self.navigationController == nil) {
         UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -63,10 +70,11 @@
         [self.view addSubview:closeButton];
     }
     
+//    self.edgesForExtendedLayout = UIRectEdgeAll;
     // image for blur test
     UIImage *img = [UIImage imageNamed:@"1"];
     UIImageView *blurTestView = [[UIImageView alloc] initWithImage:img];
-    blurTestView.frame = CGRectMake(0, 64, img.size.width, img.size.height);
+    blurTestView.frame = CGRectMake(0, 0, img.size.width, img.size.height);
     [self.view addSubview:blurTestView];
     
     // transition stack view
