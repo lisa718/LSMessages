@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "LSMessage.h"
 
+static __weak UINavigationBar * lastNavBar;
 @interface ViewController ()
 
 // transition
@@ -57,8 +58,13 @@
     UIView * systemBackgroundView = [self.navigationController.navigationBar valueForKey:@"backgroundView"];
     UIView * customBackgroundView = [[UIView alloc] initWithFrame:systemBackgroundView.frame];
     customBackgroundView.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:1];
-    [self.navigationController.navigationBar setValue:customBackgroundView forKey:@"backgroundView"];
+    if (lastNavBar != self.navigationController.navigationBar && lastNavBar != nil) {
+        customBackgroundView.backgroundColor = [UIColor redColor];
+    }
+    lastNavBar = self.navigationController.navigationBar;
 
+    [self.navigationController.navigationBar setValue:customBackgroundView forKey:@"backgroundView"];
+    
     
 
     if (self.navigationController == nil) {

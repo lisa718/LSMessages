@@ -37,11 +37,3 @@ typedef NS_ENUM(NSInteger,LSMessagePosition);
 @end
 
 
-//-----------------Timer-------------
-@interface NSTimer (NonRetain)
-+ (NSTimer *)scheduledNonRetainTimerWithTimeInterval:(NSTimeInterval)ti
-                                              target:(id)aTarget
-                                            selector:(SEL)aSelector
-                                            userInfo:(nullable id)userInfo
-                                             repeats:(BOOL)yesOrNo;
-@end

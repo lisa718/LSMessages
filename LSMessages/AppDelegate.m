@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "LSMessageView.h"
+#import "NSTimer+NonRetain.h"
 @interface AppDelegate ()
 
 @end

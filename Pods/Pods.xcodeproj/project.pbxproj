@@ -7,16 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14DD78062E33839871A3CFA30EAEF0F8 /* HexColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C14560A3FBF4F3510139C792964A87 /* HexColors-dummy.m */; };
-		5C15E9FEE3A7C5D621CCE7DB55B0DA53 /* HexColors.h in Headers */ = {isa = PBXBuildFile; fileRef = F7EA367A35BCA242B3F3CA7582F600C8 /* HexColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14DD78062E33839871A3CFA30EAEF0F8 /* HexColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAECFE40CC46EC572CF7BFD26ED5E21 /* HexColors-dummy.m */; };
+		5C15E9FEE3A7C5D621CCE7DB55B0DA53 /* HexColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 3837579C9C0BED34DC7F4BF83A1F2C64 /* HexColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C1A38C5CE4DDD0D4B34F06FEC557070 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		684887DE0B0891FB0EA0B6F6B53622B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		6AABE052F8D3F37AC73155594DD34B3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A4950E142AD29C6F3F5E021256208496 /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C310A47DD4F0E6BD03DB9EBD17787EAE /* HexColors.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E9AC5047FDE9AAF6D6AC1E72904DB441 /* Pods-LSMessages-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CBF6F4ECA6BB69019ECD7ABDCD2715 /* Pods-LSMessages-dummy.m */; };
+		A4950E142AD29C6F3F5E021256208496 /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A17986DB58B3045DA5766FF369AB54 /* HexColors.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A4D13B2D8CA38C5C14EDC8EF0237F207 /* NSTimer+NonRetain.h in Headers */ = {isa = PBXBuildFile; fileRef = D62C7194AFDEFE31CEBEA4650DA40326 /* NSTimer+NonRetain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C411F5FACD14F278F0ED3223DCED7CC5 /* LSTimer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B87B858E8472A39D1F160CA65FE80 /* LSTimer-dummy.m */; };
+		C4BCE552EBE22FECA97850E0B11A0590 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		D4529755E76C88ECB173DA6D947E711D /* NSTimer+NonRetain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3292A6940E218E0CEA35C631951EF2 /* NSTimer+NonRetain.m */; };
+		F23B215474299DCBE8A487A93FD041D0 /* Pods-LSMessages-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CBF6F4ECA6BB69019ECD7ABDCD2715 /* Pods-LSMessages-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AE428C66CF4550B64C5500D1DE8ABA70 /* PBXContainerItemProxy */ = {
+		72EEA0EB90A43F5F96963745C6BC4C26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55ECDFB642B19B0C8F951AF66538832E;
+			remoteInfo = LSTimer;
+		};
+		8BD442F056218816D32718B64F177AFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -26,38 +37,52 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0716B3CD81DC5C4FBA72F1EECCEFBBDE /* HexColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HexColors-prefix.pch"; sourceTree = "<group>"; };
-		0E6C05F73D6EEE81290CB50056C0FFBF /* HexColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HexColors.xcconfig; sourceTree = "<group>"; };
+		0B3292A6940E218E0CEA35C631951EF2 /* NSTimer+NonRetain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSTimer+NonRetain.m"; path = "TimerTest/Tool/NSTimer+NonRetain.m"; sourceTree = "<group>"; };
+		100AE5F7500189EC71BAF9128C1D50D3 /* HexColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HexColors.xcconfig; sourceTree = "<group>"; };
+		1DAECFE40CC46EC572CF7BFD26ED5E21 /* HexColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HexColors-dummy.m"; sourceTree = "<group>"; };
 		29CF4979A7C723DBB1C441EBAFBFCB43 /* Pods-LSMessages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LSMessages.release.xcconfig"; sourceTree = "<group>"; };
-		33E4386D421E1C2AC583EF5A1A94AD1C /* libPods-LSMessages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-LSMessages.a"; path = "libPods-LSMessages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3837579C9C0BED34DC7F4BF83A1F2C64 /* HexColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HexColors.h; path = Classes/HexColors.h; sourceTree = "<group>"; };
 		3B8D3D275F70832057CE3C19F5728E74 /* Pods-LSMessages-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LSMessages-acknowledgements.markdown"; sourceTree = "<group>"; };
+		472CCCC40E6817894210E583E451FBA4 /* libHexColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHexColors.a; path = libHexColors.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B6837BBE8C81B75C5A09A1C096CE80 /* Pods-LSMessages-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LSMessages-acknowledgements.plist"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8417CD3F4A12408330FCB9A2FCFF5FAA /* libHexColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHexColors.a; path = libHexColors.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		877B5B6894E88CEA3DEDA83D33BCEF6B /* HexColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HexColors-prefix.pch"; sourceTree = "<group>"; };
+		88A17986DB58B3045DA5766FF369AB54 /* HexColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HexColors.m; path = Classes/HexColors.m; sourceTree = "<group>"; };
+		8AB3038410C2DD083C10A12EC9726133 /* libLSTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libLSTimer.a; path = libLSTimer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D53484E24D0F6DD69267E07D2E816F6 /* LSTimer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LSTimer-prefix.pch"; sourceTree = "<group>"; };
 		8FB75D8C8F54D156DC24CFE725063377 /* Pods-LSMessages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LSMessages.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		989E25197A9BCA8693991A94A8F86D2D /* Pods-LSMessages-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LSMessages-frameworks.sh"; sourceTree = "<group>"; };
 		A4CBF6F4ECA6BB69019ECD7ABDCD2715 /* Pods-LSMessages-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LSMessages-dummy.m"; sourceTree = "<group>"; };
+		AD9C5258636A5D096BC80E16B1A59AED /* LSTimer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LSTimer.xcconfig; sourceTree = "<group>"; };
+		B236F874740681573B2E5CD4B734B544 /* libPods-LSMessages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-LSMessages.a"; path = "libPods-LSMessages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACACF74BDCB581A918CB9410A267501 /* Pods-LSMessages-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LSMessages-resources.sh"; sourceTree = "<group>"; };
-		C310A47DD4F0E6BD03DB9EBD17787EAE /* HexColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HexColors.m; path = Classes/HexColors.m; sourceTree = "<group>"; };
-		D7C14560A3FBF4F3510139C792964A87 /* HexColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HexColors-dummy.m"; sourceTree = "<group>"; };
-		F7EA367A35BCA242B3F3CA7582F600C8 /* HexColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HexColors.h; path = Classes/HexColors.h; sourceTree = "<group>"; };
+		D62C7194AFDEFE31CEBEA4650DA40326 /* NSTimer+NonRetain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSTimer+NonRetain.h"; path = "TimerTest/Tool/NSTimer+NonRetain.h"; sourceTree = "<group>"; };
+		D80B87B858E8472A39D1F160CA65FE80 /* LSTimer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LSTimer-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		26A6C056EEF2774B4DA37255B4BCE72F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6AABE052F8D3F37AC73155594DD34B3D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2F45FD804D336CC90E6F5B7EB2369D0E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				684887DE0B0891FB0EA0B6F6B53622B2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		545FC4DBDA45B6DF91A4A2E48D1535D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4BCE552EBE22FECA97850E0B11A0590 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9591B86871AFE3C2AA40CDE75412681A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C1A38C5CE4DDD0D4B34F06FEC557070 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,35 +97,35 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		092F74BE93C9BA17842598878517398C /* HexColors */ = {
+		2552684756322BE262EC2C7DB535EF03 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F7EA367A35BCA242B3F3CA7582F600C8 /* HexColors.h */,
-				C310A47DD4F0E6BD03DB9EBD17787EAE /* HexColors.m */,
-				6FFD5BA98B7BB941D76BA6E623C8822B /* Support Files */,
-			);
-			name = HexColors;
-			path = HexColors;
-			sourceTree = "<group>";
-		};
-		6DAC4A83F40E733D1F62778678912E35 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8417CD3F4A12408330FCB9A2FCFF5FAA /* libHexColors.a */,
-				33E4386D421E1C2AC583EF5A1A94AD1C /* libPods-LSMessages.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		6FFD5BA98B7BB941D76BA6E623C8822B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0E6C05F73D6EEE81290CB50056C0FFBF /* HexColors.xcconfig */,
-				D7C14560A3FBF4F3510139C792964A87 /* HexColors-dummy.m */,
-				0716B3CD81DC5C4FBA72F1EECCEFBBDE /* HexColors-prefix.pch */,
+				100AE5F7500189EC71BAF9128C1D50D3 /* HexColors.xcconfig */,
+				1DAECFE40CC46EC572CF7BFD26ED5E21 /* HexColors-dummy.m */,
+				877B5B6894E88CEA3DEDA83D33BCEF6B /* HexColors-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/HexColors";
+			sourceTree = "<group>";
+		};
+		406D2A581402AB44DB8A1188FD3A19DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				652EC2E390838F76211467133FC2D939 /* HexColors */,
+				8EA780B08A5F237243565DA1B6DD0EBA /* LSTimer */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		652EC2E390838F76211467133FC2D939 /* HexColors */ = {
+			isa = PBXGroup;
+			children = (
+				3837579C9C0BED34DC7F4BF83A1F2C64 /* HexColors.h */,
+				88A17986DB58B3045DA5766FF369AB54 /* HexColors.m */,
+				2552684756322BE262EC2C7DB535EF03 /* Support Files */,
+			);
+			name = HexColors;
+			path = HexColors;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -108,10 +133,21 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				F9A417A795CBB0D3515C1BAEC1225A8D /* Pods */,
-				6DAC4A83F40E733D1F62778678912E35 /* Products */,
+				406D2A581402AB44DB8A1188FD3A19DB /* Pods */,
+				FEEE91FE92B42751056DA19AACDF43CA /* Products */,
 				047B3E17DC1DB56A7FC5B70065574A5A /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8EA780B08A5F237243565DA1B6DD0EBA /* LSTimer */ = {
+			isa = PBXGroup;
+			children = (
+				D62C7194AFDEFE31CEBEA4650DA40326 /* NSTimer+NonRetain.h */,
+				0B3292A6940E218E0CEA35C631951EF2 /* NSTimer+NonRetain.m */,
+				F8AFEC4822D76398519C0063043EE6BA /* Support Files */,
+			);
+			name = LSTimer;
+			path = LSTimer;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -145,17 +181,38 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		F9A417A795CBB0D3515C1BAEC1225A8D /* Pods */ = {
+		F8AFEC4822D76398519C0063043EE6BA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				092F74BE93C9BA17842598878517398C /* HexColors */,
+				AD9C5258636A5D096BC80E16B1A59AED /* LSTimer.xcconfig */,
+				D80B87B858E8472A39D1F160CA65FE80 /* LSTimer-dummy.m */,
+				8D53484E24D0F6DD69267E07D2E816F6 /* LSTimer-prefix.pch */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/LSTimer";
+			sourceTree = "<group>";
+		};
+		FEEE91FE92B42751056DA19AACDF43CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				472CCCC40E6817894210E583E451FBA4 /* libHexColors.a */,
+				8AB3038410C2DD083C10A12EC9726133 /* libLSTimer.a */,
+				B236F874740681573B2E5CD4B734B544 /* libPods-LSMessages.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		9F6F428D570A299FEB6EE99006097B64 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4D13B2D8CA38C5C14EDC8EF0237F207 /* NSTimer+NonRetain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B614DA345A86993AB81695ABCAC62CE3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -167,21 +224,39 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6450B45CFEFB5C0BAF544BC4DB84EABB /* Pods-LSMessages */ = {
+		55ECDFB642B19B0C8F951AF66538832E /* LSTimer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2AD96B2DAED4C9E41A173540E287A043 /* Build configuration list for PBXNativeTarget "Pods-LSMessages" */;
+			buildConfigurationList = 18F0618A10C21EFCF374E3CDD756D0CA /* Build configuration list for PBXNativeTarget "LSTimer" */;
 			buildPhases = (
-				3F802055D73576CDF7776C0E696BE6D4 /* Sources */,
-				26A6C056EEF2774B4DA37255B4BCE72F /* Frameworks */,
+				53A6F505A2FD8E138ECE415757060BC0 /* Sources */,
+				545FC4DBDA45B6DF91A4A2E48D1535D0 /* Frameworks */,
+				9F6F428D570A299FEB6EE99006097B64 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EFC60C055E6616EC0661B322ED0B9A04 /* PBXTargetDependency */,
+			);
+			name = LSTimer;
+			productName = LSTimer;
+			productReference = 8AB3038410C2DD083C10A12EC9726133 /* libLSTimer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EC2F1BDBAFA5145FD51624DD3039A64D /* Pods-LSMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFB8F7D0CF565E13FD8E49EC10824714 /* Build configuration list for PBXNativeTarget "Pods-LSMessages" */;
+			buildPhases = (
+				2214A182060560193C066DF0BD46389D /* Sources */,
+				9591B86871AFE3C2AA40CDE75412681A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2D994E565C9B9CF1E3B8834FD043CC8 /* PBXTargetDependency */,
+				A59FB6639744A17623C7F39E2549DEBB /* PBXTargetDependency */,
 			);
 			name = "Pods-LSMessages";
 			productName = "Pods-LSMessages";
-			productReference = 33E4386D421E1C2AC583EF5A1A94AD1C /* libPods-LSMessages.a */;
+			productReference = B236F874740681573B2E5CD4B734B544 /* libPods-LSMessages.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		EC7BAA2B0109B633CE06A36E872A9505 /* HexColors */ = {
@@ -198,7 +273,7 @@
 			);
 			name = HexColors;
 			productName = HexColors;
-			productReference = 8417CD3F4A12408330FCB9A2FCFF5FAA /* libHexColors.a */;
+			productReference = 472CCCC40E6817894210E583E451FBA4 /* libHexColors.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -218,22 +293,32 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 6DAC4A83F40E733D1F62778678912E35 /* Products */;
+			productRefGroup = FEEE91FE92B42751056DA19AACDF43CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				EC7BAA2B0109B633CE06A36E872A9505 /* HexColors */,
-				6450B45CFEFB5C0BAF544BC4DB84EABB /* Pods-LSMessages */,
+				55ECDFB642B19B0C8F951AF66538832E /* LSTimer */,
+				EC2F1BDBAFA5145FD51624DD3039A64D /* Pods-LSMessages */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3F802055D73576CDF7776C0E696BE6D4 /* Sources */ = {
+		2214A182060560193C066DF0BD46389D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9AC5047FDE9AAF6D6AC1E72904DB441 /* Pods-LSMessages-dummy.m in Sources */,
+				F23B215474299DCBE8A487A93FD041D0 /* Pods-LSMessages-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53A6F505A2FD8E138ECE415757060BC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C411F5FACD14F278F0ED3223DCED7CC5 /* LSTimer-dummy.m in Sources */,
+				D4529755E76C88ECB173DA6D947E711D /* NSTimer+NonRetain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,18 +334,47 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EFC60C055E6616EC0661B322ED0B9A04 /* PBXTargetDependency */ = {
+		A2D994E565C9B9CF1E3B8834FD043CC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HexColors;
 			target = EC7BAA2B0109B633CE06A36E872A9505 /* HexColors */;
-			targetProxy = AE428C66CF4550B64C5500D1DE8ABA70 /* PBXContainerItemProxy */;
+			targetProxy = 8BD442F056218816D32718B64F177AFF /* PBXContainerItemProxy */;
+		};
+		A59FB6639744A17623C7F39E2549DEBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LSTimer;
+			target = 55ECDFB642B19B0C8F951AF66538832E /* LSTimer */;
+			targetProxy = 72EEA0EB90A43F5F96963745C6BC4C26 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2180F4B8D08851725B17DF2C0F3EBCBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29CF4979A7C723DBB1C441EBAFBFCB43 /* Pods-LSMessages.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		283992143C2305EE38394694C2691309 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E6C05F73D6EEE81290CB50056C0FFBF /* HexColors.xcconfig */;
+			baseConfigurationReference = 100AE5F7500189EC71BAF9128C1D50D3 /* HexColors.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -325,7 +439,30 @@
 			};
 			name = Release;
 		};
-		406FEEAF8D4E1209541807A452C0213D /* Debug */ = {
+		473534E035CF1F688FC621D91CB969DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9C5258636A5D096BC80E16B1A59AED /* LSTimer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LSTimer/LSTimer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		69C252B17EA1EF2C4CE35A62989D8B1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8FB75D8C8F54D156DC24CFE725063377 /* Pods-LSMessages.debug.xcconfig */;
 			buildSettings = {
@@ -350,7 +487,7 @@
 		};
 		6EDE42538BBBFE1A4A31F5D9611DADB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E6C05F73D6EEE81290CB50056C0FFBF /* HexColors.xcconfig */;
+			baseConfigurationReference = 100AE5F7500189EC71BAF9128C1D50D3 /* HexColors.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -370,6 +507,29 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
+		};
+		9AA8839633729F46BC183290C1F2FC31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9C5258636A5D096BC80E16B1A59AED /* LSTimer.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LSTimer/LSTimer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 		C104F7F091290C3D1E248192F07FE689 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -419,37 +579,14 @@
 			};
 			name = Debug;
 		};
-		CAB06E54356D8224D6E38EC01A7E2B92 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29CF4979A7C723DBB1C441EBAFBFCB43 /* Pods-LSMessages.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2AD96B2DAED4C9E41A173540E287A043 /* Build configuration list for PBXNativeTarget "Pods-LSMessages" */ = {
+		18F0618A10C21EFCF374E3CDD756D0CA /* Build configuration list for PBXNativeTarget "LSTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				406FEEAF8D4E1209541807A452C0213D /* Debug */,
-				CAB06E54356D8224D6E38EC01A7E2B92 /* Release */,
+				473534E035CF1F688FC621D91CB969DE /* Debug */,
+				9AA8839633729F46BC183290C1F2FC31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -459,6 +596,15 @@
 			buildConfigurations = (
 				C104F7F091290C3D1E248192F07FE689 /* Debug */,
 				34FE9531DA9AF2820790339988D5FF41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFB8F7D0CF565E13FD8E49EC10824714 /* Build configuration list for PBXNativeTarget "Pods-LSMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69C252B17EA1EF2C4CE35A62989D8B1B /* Debug */,
+				2180F4B8D08851725B17DF2C0F3EBCBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

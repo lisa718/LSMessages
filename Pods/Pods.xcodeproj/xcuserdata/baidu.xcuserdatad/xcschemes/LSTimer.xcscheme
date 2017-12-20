@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EC2F1BDBAFA5145FD51624DD3039A64D'
-               BlueprintName = 'Pods-LSMessages'
+               BlueprintIdentifier = '55ECDFB642B19B0C8F951AF66538832E'
+               BlueprintName = 'LSTimer'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-LSMessages.a'>
+               BuildableName = 'libLSTimer.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
