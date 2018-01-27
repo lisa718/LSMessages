@@ -63,6 +63,9 @@ const NSTimeInterval kAnimationDuration = 0.2;
     }
     return self;
 }
+- (void)dealloc {
+    
+}
 
 // 展示当前的messageBox
 - (void) start {
@@ -146,6 +149,7 @@ const NSTimeInterval kAnimationDuration = 0.2;
     self.executing = NO;
     self.finished = YES;
     self.currentShowingView = nil;
+    self.calculateToPos = nil;
 }
 
 - (void)addMessageViewAnimated:(LSMessageView *)message_view {

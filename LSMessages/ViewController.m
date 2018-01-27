@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "LSMessage.h"
 
-static __weak UINavigationBar * lastNavBar;
 @interface ViewController ()
 
 // transition
@@ -55,15 +54,15 @@ static __weak UINavigationBar * lastNavBar;
 //    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
 //    self.navigationController.navigationBar.translucent = NO;
 //    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
-    UIView * systemBackgroundView = [self.navigationController.navigationBar valueForKey:@"backgroundView"];
-    UIView * customBackgroundView = [[UIView alloc] initWithFrame:systemBackgroundView.frame];
-    customBackgroundView.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:1];
-    if (lastNavBar != self.navigationController.navigationBar && lastNavBar != nil) {
-        customBackgroundView.backgroundColor = [UIColor redColor];
-    }
-    lastNavBar = self.navigationController.navigationBar;
-
-    [self.navigationController.navigationBar setValue:customBackgroundView forKey:@"backgroundView"];
+//    UIView * systemBackgroundView = [self.navigationController.navigationBar valueForKey:@"backgroundView"];
+//    UIView * customBackgroundView = [[UIView alloc] initWithFrame:systemBackgroundView.frame];
+//    customBackgroundView.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:1];
+//    if (lastNavBar != self.navigationController.navigationBar && lastNavBar != nil) {
+//        customBackgroundView.backgroundColor = [UIColor redColor];
+//    }
+//    lastNavBar = self.navigationController.navigationBar;
+//
+//    [self.navigationController.navigationBar setValue:customBackgroundView forKey:@"backgroundView"];
     
     
 
@@ -123,6 +122,9 @@ static __weak UINavigationBar * lastNavBar;
 
 }
 
+- (void)dealloc {
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
