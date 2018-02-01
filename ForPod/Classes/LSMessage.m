@@ -122,7 +122,10 @@
     Debug_NSLog(@"operations count = %ld,all operations = %@",queue.operations.count,queue.operations);
 
     // 取消当前正在执行的任务，其实就是第0个任务
-    [queue.operations makeObjectsPerformSelector:@selector(cancelInvalidExecutingOperation)];
+    LSMessageOperation * first = queue.operations.firstObject;
+    [first cancelInvalidExecutingOperation];
+    
+//    [queue.operations makeObjectsPerformSelector:@selector(cancelInvalidExecutingOperation)];
     
     // 生成一个NSOpration
     if (view_controller == nil) {
